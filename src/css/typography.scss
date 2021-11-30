@@ -1,0 +1,35 @@
+body {
+    font-family: 'noMono', 'multiplyH1', "NSimSun", "SimSun-ExtB", "SimSun", "PMingLiu", simsun, monospace, sans-serif !important;
+    @apply md:text-xl;
+    
+}
+
+@font-face {
+    font-family: 'multiplyH1';
+    src: local("SimSun");
+    unicode-range: U+00D7;
+    size-adjust: 70%;
+}
+
+@font-face {
+    font-family: 'noMono';
+    src: local("Arial");
+    unicode-range: U+0027, U+2019, U+02BC, U+00B4, U+2018, U+201D, U+201C;
+}
+
+h1, h2 {
+    @apply text-3xl md:text-6xl lg:text-8xl text-center;
+    word-spacing: -.025em;
+}
+
+s {
+    text-decoration-thickness: 1px;
+}
+ 
+small {
+    @apply text-base md:text-xl;
+}
+
+path {
+    stroke-width: .2px !important;
+}
