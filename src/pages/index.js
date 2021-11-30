@@ -119,7 +119,7 @@ const IndexPage = () => (
           <br />
           <Link to="/subscribe">SUBSCRIBE TO NEWSLETTER</Link>
         </div>
-        <div className="grid grid-cols-2 gap-4 uppercase text-center md:-mt-3">
+        <div className="grid grid-cols-2 gap-8 uppercase text-center md:-mt-3">
           <AuthorCard author={author1} />
           <AuthorCard author={author2} />
           <AuthorCard author={author3} />
@@ -128,7 +128,7 @@ const IndexPage = () => (
       </div>
     </Section>
     <Section title="Further Readings">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {posts.map((post)=><PostCard size="small" post={post} />)}
       </div>
       <div className="flex items-center justify-center mt-24"><Link className="primary-button" to="/read">View All Articles</Link></div>

@@ -9,7 +9,7 @@ const Draw = ({svg, start = "inViewPort", caption}) => {
   return (
   <div>
     <ReactVivus
-    id={svg.svg}
+    id="HeroSVG"
       option={{
         file: svg.svg,
         start: start,

@@ -5,7 +5,7 @@ import { JingDaily } from "../svgs"
 
 const Header = () => (
   <header className="fixed bg-white left-0 top-0 w-full z-50">
-    <div className="max-w-6xl mx-4 xl:mx-auto my-2">
+    <div className="max-w-6xl mx-8 xl:mx-auto my-2">
       <div className="flex justify-between">
     <h1 className="flex">
       <Link className="flex text-base md:text-xl items-center uppercase" to="/">
