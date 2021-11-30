@@ -41,7 +41,7 @@ exports.sourceNodes = async ({ actions }) => {
   console.log('creating sourceNodes')
   const allPosts = await (
     await fetch(
-      "https://jingdaily.com/wp-json/wp/v2/posts?filter[tag]=17457"
+      "https://jingdaily.com/wp-json/wp/v2/posts?filter[tag]=17457&_embed"
     )
   ).json()
 
@@ -61,9 +61,11 @@ exports.sourceNodes = async ({ actions }) => {
       slug: post.slug,
       title: post.title.rendered,
       date: post.date,
-      content: post.content.rendered,
-      excerpt: post.excerpt.rendered,
-      featured_media: post.featured_media 
+      content: post.content?.rendered,
+      excerpt: post.excerpt?.rendered,
+      featured_media: post._embedded['wp:featuredmedia']?.source_url ? post._embedded['wp:featuredmedia'].source_url : '' ,
+      og_image: post._embedded?.media_details?.sizes['post-thumbnail-1240']?.source_url ? post._embedded.media_details.sizes['post-thumbnail-1240'].source_url : '',
+      author: post._embedded.author.name
     };
     const contentDigest = crypto.createHash(`md5`).update(JSON.stringify(node)).digest(`hex`);
     node.internal.contentDigest = contentDigest;
@@ -85,7 +87,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const allPosts = await (
     await fetch(
-      "https://jingdaily.com/wp-json/wp/v2/posts?filter[post__in]=127307,127308,127309,127310"
+      "https://jingdaily.com/wp-json/wp/v2/posts?filter[post__in]=127307,127308,127309,127310&_embed"
     )
   ).json()
   for (const post of allPosts) {

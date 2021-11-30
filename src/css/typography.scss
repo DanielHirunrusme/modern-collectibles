@@ -1,5 +1,5 @@
 body {
-    font-family: 'noMono', 'multiplyH1', "NSimSun", "SimSun-ExtB", "SimSun", "PMingLiu", simsun, monospace, sans-serif !important;
+    font-family: 'noMono', 'multiplyH1', "NSimSun", "SimSun-ExtB", "SimSun", "ST FangSong", "ST FangSong 2", "MSMincho", "PMingLiu", simsun, monospace, sans-serif !important;
     @apply md:text-xl;
     
 }
@@ -27,7 +27,11 @@ s {
 }
  
 small {
-    @apply text-base md:text-xl;
+    @apply text-sm;
+    a {
+        @apply underline;
+        text-decoration-thickness: 1px;
+    }
 }
 
 path {

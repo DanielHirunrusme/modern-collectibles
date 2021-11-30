@@ -70,6 +70,14 @@ const posts = [
   },
 ]
 
+const getSVG = () => {
+  const SVGS = [Backpack, Bandana, Belt, Duffle, Shirt, Shoe, Skateboard, Trunk, Wallet];
+  const Names = ["Backpack", "Bandana", "Belt", "Duffle", "Shirt", "Shoe", "Skateboard", "Trunk", "Wallet"];
+  const rand = Math.floor(Math.random()*SVGS.length);
+  const SVG = {svg: SVGS[rand], caption: `The ${Names[rand]} part of the LVxSupreme 2017 collection. Shop All`};
+  return SVG;
+}
+
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
@@ -79,11 +87,9 @@ const IndexPage = () => (
       title="LV×Supreme"
       subTitle="In Partnership with Sotheby’s"
     >
-      <div className="absolute top-1/2 left-0">
-      </div>
+      <div className="lg:mt-24"><Draw svg={getSVG()} start="autostart" /></div>
       {/* <div className="absolute bottom-0 right-0 transform translate-x-1/2"><Draw svg={Trunk} /></div> */}
     </Hero>
-    <div className="lg:mt-24"><Draw svg={Belt} start="autostart" /></div>
     {/* <PostCard post={firstPost} /> */}
     <Section title="Newsletter">
       <Newsletter />

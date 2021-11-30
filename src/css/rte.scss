@@ -1,9 +1,5 @@
 .rte {
 
-    p {
-        @apply md:w-1/2 md:ml-auto;
-    }
-
     p + p:not(:last-child) {
         margin-top: 1em;
     }
@@ -29,4 +25,46 @@
     //unordered list
 
     //ordered list
+
+
+    // wordpress classes
+    .wp-caption {
+        @apply text-sm text-left;
+        margin-top: 6rem !important;
+        margin-bottom: 6rem !important;
+        @screen md {
+            margin-top: 6rem !important;
+            margin-bottom: 6rem !important;
+        }
+        
+    }
+    .aligncenter {
+        @apply mx-auto;
+        width: auto !important;
+    }
+    .size-medium {
+        width: 100% !important;
+    }
+    .size-large {
+        @screen md {
+            width: 75% !important;
+        }
+    }
+    .wp-caption-text {
+        @apply m-0 mt-2;
+    }
+
+    img {
+        @apply mx-auto;
+        width: 100% !important;
+    }
+
+    td {
+        @apply my-4 md:my-12;
+    }
+
+    tr {
+        @apply grid md:grid-flow-col gap-4;
+    }
+  
 }

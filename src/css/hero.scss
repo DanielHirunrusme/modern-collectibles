@@ -1,4 +1,8 @@
 .hero {
-    max-height: 800px;
+    min-height: 100vh;
+}
+
+.hero-text {
     height: 50vh;
+    max-height: 500px;
 }
