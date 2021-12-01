@@ -30,9 +30,9 @@ const Catalogue = ({ products }) => {
       <div className="flex overflow-x-scroll pb-10 hide-scroll-bar -mx-8">
         <div className="flex flex-nowrap ml-8 ">
         {products.map(product => (
-          <div className="inline-block pr-2 md:pr-8">
+          <div className="inline-block pr-4 md:pr-8">
              
-            <div className="w-72 h-96 flex justify-between flex-col  max-w-xs overflow-hidden border border-black bg-white ">
+            <div className="w-48 h-64 md:w-72 md:h-96 flex justify-between flex-col  max-w-xs overflow-hidden border border-black bg-white ">
             <div className="m-1">
             {product.Images && product.Images[0] && <img src={product.Images[0].thumbnails.large.url} />}
             </div>

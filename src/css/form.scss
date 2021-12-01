@@ -19,11 +19,11 @@ form {
 }
 
 input {
-    @apply md:text-8xl outline-none w-full px-2;
+    @apply text-3xl md:text-8xl outline-none w-full px-2;
 }
 
 button[type="submit"] {
-    @apply md:text-8xl;
+    @apply text-3xl md:text-8xl;
 }
 
 input:-webkit-autofill,

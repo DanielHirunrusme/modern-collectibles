@@ -30,6 +30,8 @@ table.border, table.border th, table.border td {
 // Shop table
 #Shop table {
 
+    @apply lg:text-3xl;
+    
 thead {
     @apply bg-white sticky h-12;
     top: 65px;
@@ -38,7 +40,7 @@ thead {
 
   th:first-child,
   td:first-child {
-    @apply md:w-16 md:mr-3 hidden md:table-cell;
+    @apply md:w-24 md:mr-3 hidden md:table-cell;
   }
   th:last-child,
   td:last-child {

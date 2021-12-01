@@ -114,7 +114,7 @@ const IndexPage = () => {
     <div></div>
 
     <Hero
-      title="LV×Supreme"
+      title="Louis Vuitton×Supreme"
       subTitle="In Partnership with Sotheby’s"
     >
       <div className="mt-12 lg:mt-24"><Draw svg={getSVG()} start="autostart" /></div>

@@ -4,5 +4,9 @@
 
 .hero-text {
     height: 50vh;
-    max-height: 500px;
+    max-height: 200px;
+    @screen md {
+        max-height: 500px;
+
+    }
 }

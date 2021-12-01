@@ -24,7 +24,7 @@ const ReadPage = () => {
   return (
   <Layout>
     <Seo title="Read" />
-    <div className="grid pt-20 gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid pt-20 gap-8 md:grid-cols-2 xl:grid-cols-4">
     {flattenedPosts && flattenedPosts.map((post)=> <PostCard size="small" post={post} />)}
     </div>
   </Layout>

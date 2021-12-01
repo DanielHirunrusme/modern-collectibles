@@ -32,7 +32,7 @@ const Post = ({ pageContext }) => {
           dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
         ></div>
 
-        <div className="max-w-6xl mx-auto my-32">
+        <div className="max-w-6xl mx-auto my-16 md:my-32">
           <ul className="flex flex-col md:flex-row">
             <li className="mr-4">SHARE:</li>
             <li className="mr-4">
