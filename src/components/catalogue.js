@@ -21,7 +21,7 @@ const Catalogue = ({ products }) => {
   return (
     <div>
       {/* Main Slick */}
-      <div>
+      <div className="h-96 w-full">
         {products.map(product => (
           <div>schematic</div>
         ))}
@@ -30,14 +30,19 @@ const Catalogue = ({ products }) => {
       <div className="flex overflow-x-scroll pb-10 hide-scroll-bar -mx-8">
         <div className="flex flex-nowrap ml-8 ">
         {products.map(product => (
-          <div className="inline-block px-2 md:px-4">
+          <div className="inline-block pr-2 md:pr-8">
              
-            <div className="w-48 h-72 md:w-64 md:h-96 max-w-xs overflow-hidden border border-black bg-white ">
+            <div className="w-72 h-96 flex justify-between flex-col  max-w-xs overflow-hidden border border-black bg-white ">
             <div className="m-1">
             {product.Images && product.Images[0] && <img src={product.Images[0].thumbnails.large.url} />}
             </div>
-              <div className="mx-4">{product.Title}<br/>${product.Price}</div>
+            <div className="flex border-t border-black">
+              <a className="flex-1 w-1/2 text-center border-r border-black p-4 block">View</a>
+              <a className="flex-1 w-1/2 text-center p-4 block">Buy Now</a>
+            </div>
               </div>
+              {/* <div className="mt-2">{product.Title}<br/>${product.Price}</div> */}
+
           </div>
         ))}
         </div>

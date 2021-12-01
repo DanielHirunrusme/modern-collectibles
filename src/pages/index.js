@@ -44,7 +44,7 @@ const author4 = {
 
 const getSVG = () => {
   const SVGS = [Backpack, Bandana, Belt, Duffle, Shirt, Shoe, Skateboard, Trunk, Wallet];
-  const Names = ["Backpack", "Bandana", "Belt", "Duffle", "Shirt", "Shoe", "Skateboard", "Trunk", "Wallet"];
+  const Names = ["Christopher Backpack", "Monogram Bandana", "LV Initiales 40 MM Belt 100CM", "Keepall 45", "Jacquard Denim Baseball Jersey", "Run Away Sneaker", "Skateboard", "Trunk", "Porte Carte Simple Red"];
   const rand = Math.floor(Math.random()*SVGS.length);
   const SVG = {svg: SVGS[rand], caption: `The ${Names[rand]} part of the LVxSupreme 2017 collection. Shop All`};
   return SVG;
