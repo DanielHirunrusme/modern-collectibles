@@ -7,7 +7,7 @@ const AboutPage = () => {
       <div className="">
       <Section title="Information">
             {/* <h1>About Jing Daily Modern Collectibles</h1> */}
-            <div className="rte">
+            <div className="rte ">
 <p>
 Jing Daily Modern Collectibles is a new mindset that contextualizes and defines highly sought-after products, ranging from sneakers and handbags to toys and jewelry. This new world merges editorial with commerce to take a deeper look at the products that define modern luxury, serving as a handbook for both consumers and brands.
 

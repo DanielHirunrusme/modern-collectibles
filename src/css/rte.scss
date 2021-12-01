@@ -61,12 +61,28 @@
         width: 100% !important;
     }
 
-    td {
-        @apply my-4 md:my-12;
+    //table
+    table {
+        td {
+            @apply my-4 md:my-12;
+        }
+    
+        tr {
+            @apply grid md:grid-flow-col gap-4;
+        }
     }
 
-    tr {
-        @apply grid md:grid-flow-col gap-4;
+    //border table
+    table.border {
+        @apply my-12 md:my-24 text-sm md:text-xl;
+
+        td {
+            @apply m-0 p-4 align-top;
+        }
+
+        tr {
+            @apply table-row;
+        }
     }
   
 }
