@@ -6,10 +6,10 @@
     }
 }
 
-.hide-scroll-bar {
+.hide-scroll-bar, body, .overflow-y-scroll {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .hide-scroll-bar::-webkit-scrollbar {
+  .hide-scroll-bar::-webkit-scrollbar, body::-webkit-scrollbar, .overflow-y-scroll::-webkit-scrollbar {
     display: none;
   }
