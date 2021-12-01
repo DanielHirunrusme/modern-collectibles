@@ -33,7 +33,7 @@ const Header = () => {
               </nav>
               <a
                 className="hidden md:block"
-                href="#"
+                href="https://weibo.com/jingdaily"
                 title="Read WeChat Articles"
                 target="_blank"
               >

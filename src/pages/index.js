@@ -61,6 +61,7 @@ const IndexPage = () => {
           excerpt
           featured_media
           slug
+          author
         }
       }
     }
@@ -72,10 +73,11 @@ const IndexPage = () => {
           excerpt
           featured_media
           slug
+          author
         }
       }
     }
-    products: allAirtable {
+    products: allAirtable(filter: {data: {Feature: {eq: true}}}) {
       edges {
         node {
           data {
@@ -84,7 +86,11 @@ const IndexPage = () => {
             Status
             Price
             ID
+            Feature
             Collection
+            SVG {
+              url
+            }
             Images {
               thumbnails {
                 small {
@@ -117,16 +123,14 @@ const IndexPage = () => {
       title="Louis Vuitton×Supreme"
       subTitle="In Partnership with Sotheby’s"
     >
-      <div className="mt-12 lg:mt-24"><Draw svg={getSVG()} start="autostart" /></div>
+      <div className="my-24 lg:mt-24 lg:mb-0"><Draw svg={getSVG()} start="autostart" /></div>
     </Hero>
     <Section title="Introduction">
     <div className="max-w-4xl mx-auto">
     {featured.map((post)=><React.Fragment key={`featured-${post.id}`}><PostCard size="large" post={post} /></React.Fragment>)}
     </div>
     </Section>
-    <Section title="Newsletter">
-      <Newsletter />
-    </Section>
+    
     <Section title="Reading">
       <div className="reading-grid gap-8 items-center">
       {posts.map((post)=><React.Fragment key={`reading-${post.id}`}><PostCard post={post} /></React.Fragment>)}
@@ -134,21 +138,18 @@ const IndexPage = () => {
     </Section>
     <Section title="Catalogue">
       <Catalogue products={products} />
+      <div className="flex items-center justify-center my-24"><a href="https://www.sothebys.com/en/buy/fashion/streetwear" className="primary-button" target="_blank">Shop Full Collection at Sotheby’s</a></div>
     </Section>
     <Section title="Through Experts Eyes">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 max-w-6xl mx-auto">
         <div className="">
           <h4>WHO ARE THE EXPERTS?</h4>
           <p> 
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-            amet. Lorem ipsum dolor sit amet, consetetur elitr, sed diam clita
-            no sea.
+          Modern collectibles have the ability to be both completely personal while also reaching a wide audience. In Through Expert Eyes, we ask top creatives across the fields of art, design, and fashion to share their pick for their favorite modern collectible.
           </p>
           <br />
           <p>
-            For more information about future modern collectibles, join our
-            mailing list.
+          For more information about future modern collectibles, join our mailing list.
           </p>
           <br />
           <Link to="/subscribe">SUBSCRIBE TO NEWSLETTER</Link>
@@ -161,11 +162,14 @@ const IndexPage = () => {
         </div>
       </div>
     </Section>
+    <Section title="Newsletter">
+      <Newsletter />
+    </Section>
     <Section title="Further Readings">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {posts.map((post)=><React.Fragment key={`further-reading-${post.id}`}><PostCard size="small" post={post} /></React.Fragment>)}
+      <div className="grid grid-flow-row gap-8 max-w-6xl mx-auto">
+        {posts.map((post)=><React.Fragment key={`further-reading-${post.id}`}><PostCard size="slim" post={post} /></React.Fragment>)}
       </div>
-      <div className="flex items-center justify-center mt-24"><Link className="primary-button" to="/read">View All Articles</Link></div>
+      <div className="flex items-center justify-center my-24"><Link className="primary-button" to="/read">View All Articles</Link></div>
 
     </Section>
   </Layout>

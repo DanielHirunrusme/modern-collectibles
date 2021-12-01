@@ -15,7 +15,10 @@ export const Shop = `{
               Collection
               Price
               Year
+              URL
               Attachments
+              Feature
+              SVG
           }
         }
       }

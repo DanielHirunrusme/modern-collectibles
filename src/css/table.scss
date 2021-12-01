@@ -21,7 +21,7 @@ table {
 
 // table border
 table.border {
-    border-collapse: collapse;
+  border-collapse: separate;
     tr {
         @apply table-row
     }
@@ -32,13 +32,11 @@ table.border, table.border th, table.border td {
 
 // Shop table
 #Shop table {
-
-    @apply lg:text-3xl;
     
 thead {
-    @apply bg-white sticky h-12;
-    top: 65px;
-    box-shadow: 0 -1px 0 0 black; /* Border top */
+    @apply bg-white sticky h-16;
+    top: 68.5px;
+    box-shadow: 0 -.5px 0 0 black; /* Border top */
 }
 
   th:first-child,

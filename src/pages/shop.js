@@ -10,15 +10,17 @@ const ShopPage = ({ data }) => {
   const flattenedData = allAirtableData?.map(({ node }) => node.data)
   const memoData = React.useMemo(() => flattenedData, [flattenedData])
 
+  console.log(memoData)
+
   const columns = React.useMemo(
     () => [
       {
         Header: "ID",
-        accessor: "ID",
+        accessor: row => <p>{row.URL ? <a target="_blank" className="block" href={row.URL}>{row.ID}</a> : <>{row.ID}</>}</p>,
       },
       {
         Header: "Title",
-        accessor: row => <p className="truncate">{row.Title}</p>,
+        accessor: row => <p className="truncate">{row.URL ? <a target="_blank" className="block" href={row.URL}>{row.Title}</a> : <>{row.Title}</>}</p>,
       },
       // {
       //   Header: "Collection",
@@ -31,13 +33,15 @@ const ShopPage = ({ data }) => {
       {
         Header: "Price",
         accessor: row => {
-          return <span className="text-right md:text-left">{row.Status === "Available" ? (
-            <a className="group text-right md:text-left" href="https://www.google.com">
-              <span className="block">${row.Price}</span>
-            </a>
-          ) : (
-            <s className="text-right block md:text-left">${row.Price}</s>
-          )}</span>
+          return (
+            <div className="text-right md:text-left">
+              {row.Status === "Available" ? (
+                <p>{row.URL ? <a className="block" target="_blank" href={row.URL}>${row.Price}</a> : <>${row.Price}</>}</p>
+              ) : (
+                <s className="text-right block md:text-left">${row.Price}</s>
+              )}
+            </div>
+          )
         },
       },
       {
@@ -45,10 +49,16 @@ const ShopPage = ({ data }) => {
         accessor: row => (
           <span>
             {row.Status === "Available" ? (
-              <a className="group" href="https://www.google.com">
-                {/* <span className="group-hover:hidden">I</span> */}
-                <span className="block">Purchase</span>
-              </a>
+              <>
+                {row.URL ? (
+                  <a className="group" href={row.URL} target="_blank" title="Purchase">
+                    {/* <span className="group-hover:hidden">I</span> */}
+                    <span className="block">Purchase</span>
+                  </a>
+                ) : (
+                  <a href="mailto:daphne@jingdaily.com" target="_blank" title="Inquire">Inquire</a>
+                )}
+              </>
             ) : (
               <s>Sold</s>
             )}
@@ -63,8 +73,10 @@ const ShopPage = ({ data }) => {
     <Layout>
       <Seo title="Shop" />
       <div id="Shop" className="pt-20 max-w-6xl mx-auto">
-        <div className="mb-3">
-          <h1 className="text-base md:text-xl lg:text-3xl text-center ">The Louis Vuitton×Supreme Collection</h1>
+        <div className="mb-4">
+          <h1 className="text-base md:text-xl lg:text-3xl text-center ">
+            The Louis Vuitton×Supreme Collection
+          </h1>
           {/* <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et.</p> */}
         </div>
         <Table columns={columns} data={memoData} />
@@ -85,6 +97,7 @@ export const query = graphql`
             Status
             Year
             Title
+            URL
           }
         }
       }

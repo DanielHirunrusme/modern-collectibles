@@ -1,11 +1,12 @@
 import React from "react"
+import {Link} from "gatsby"
 import { Layout, Seo, Table, Section } from "../components/index"
 const AboutPage = () => {
   return (
     <Layout>
       <Seo title="Shop" />
       <div className="">
-      <Section title="Information">
+      <Section title="About Jing Daily Modern Collectibles">
             {/* <h1>About Jing Daily Modern Collectibles</h1> */}
             <div className="rte ">
 <p>
@@ -15,22 +16,22 @@ At the core of Jing Daily’s exploration is the friction within the words “mo
 
 Jing Daily Modern Collectibles creates a both physical and digital experience, giving consumers the ability to buy products and interact with content online. Our first activation comes in partnership with Sotheby’s, where together we will be selling 117 pieces from the Louis Vuitton x Supreme collection. 
 
-For more on modern collectibles, read our full criteria and parameters. 
+For more on modern collectibles, <Link to={"/read/what-becomes-a-luxury-legend-most"}>read our full criteria and parameters</Link>. 
 </p>
 </div>
-<Section title="Background">
+<Section title="About Jing Daily">
     <div className="rte">
 <p>
 Launched in 2009, Jing Daily is the leading digital publication on luxury consumer trends in China. It is our mission to understand the forces shaping the future of the luxury industry by bringing our readers the latest news, analysis, features, and reports exploring developments in that landscape. We seek to understand how the definition of luxury, and by turn its consumption, are changing, how the digital landscape in China is developing, and how brands are adapting and taking advantage of those changes. Our readers are industry leaders seeking to understand China’s complex and rapidly evolving luxury industry.
 
-Jing Daily is the flagship publication of the Jing Group, which also includes China Film Insider, MOVE THE MIND, Jing Travel, and Jing Culture & Commerce. Together, the Jing Group is one of the most trusted English-language sources of news and information about global trends in culture, technology, and the business of luxury and fashion, including Chinese culture and commerce, for institutions, companies, and professionals worldwide.
+Jing Daily is the flagship publication of the Jing Group, which also includes China Film Insider, MOVE THE MIND, Jing Travel, and Jing Culture &amp; Commerce. Together, the Jing Group is one of the most trusted English-language sources of news and information about global trends in culture, technology, and the business of luxury and fashion, including Chinese culture and commerce, for institutions, companies, and professionals worldwide.
 </p>
 </div>
 </Section>
 
 </Section>
         <Section title="Inquiries">
-            <div class="grid grid-cols-2 gap-8  mx-auto text-center max-w-xl mx-auto">
+            <div className="grid grid-cols-2 gap-8  mx-auto text-center max-w-xl mx-auto">
             <div className="aspect-w-4 aspect-h-4 border flex items-center justify-center border-black"><a href="mailto:editorial@jingdaily.com" className="flex items-center justify-center">EDITORIAL</a></div>
                 <div className="aspect-w-4 aspect-h-4 border  flex items-center justify-center border-black">
 <a href="mailto:daphne@jingdaily.com" className="flex items-center justify-center">PARTNERSHIP</a></div>

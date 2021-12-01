@@ -23,22 +23,23 @@ const Footer = () => (
       <ul className="hidden md:flex flex-col md:flex-row items-center my-6">
         <li className="mr-3 hidden lg:block">
           <a
-            href="#"
+            href="https://jingculturecommerce.com/"
             title="Jing Culture and Commerice"
             className="whitespace-nowrap"
+            target="_blank"
           >
             Culture &amp; Commerce
           </a>
         </li>
         <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3 hidden lg:block">
-          <a href="#" title="China Film Insider">
-            China Film Insider
+          <a href="https://jingdaily.com" title="Jing Daily" target="_blank">
+            Jing Daily
           </a>
         </li>
         <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3">
-          <Link to="/advertise">Advertise</Link>
+          <a href="https://jingdaily.com/advertise/" target="_blank">Advertise</a>
         </li>
         <li className="mr-3 hidden md:block">|</li>
         <li className="mr-3">
