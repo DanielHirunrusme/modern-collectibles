@@ -35,7 +35,7 @@ const crypto = require("crypto")
 
 // part two
 exports.sourceNodes = async ({ actions }) => {
-  const { createNode } = actions;
+  const { createNode } = actions
 
   const allPosts = await (
     await fetch(
@@ -55,24 +55,32 @@ exports.sourceNodes = async ({ actions }) => {
         // lets you query nodes using allAPIPost and APIPost
         type: `APIPost`,
       },
-      children: [],
-
-      // Other fields that you want to query with graphQl
+      // children: [],
       slug: post.slug,
       title: post.title.rendered,
       date: post.date,
       content: post.content?.rendered,
       excerpt: post.excerpt?.rendered,
-      featured_media: post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0] && post._embedded['wp:featuredmedia'][0]?.source_url ? post._embedded['wp:featuredmedia'][0].source_url : '' ,
-      og_image: post._embedded?.media_details?.sizes['post-thumbnail-1240']?.source_url ? post._embedded.media_details.sizes['post-thumbnail-1240'].source_url : '',
-      author: post._embedded.author[0].name
-    };
-    const contentDigest = crypto.createHash(`md5`).update(JSON.stringify(node)).digest(`hex`);
-    node.internal.contentDigest = contentDigest;
-    createNode(node);
+      featured_media:
+        post._embedded["wp:featuredmedia"] &&
+        post._embedded["wp:featuredmedia"][0] &&
+        post._embedded["wp:featuredmedia"][0].source_url
+          ? post._embedded["wp:featuredmedia"][0].source_url
+          : "",
+      // og_image: post._embedded?.media_details?.sizes["post-thumbnail-1240"]
+      //   ?.source_url
+      //   ? post._embedded.media_details.sizes["post-thumbnail-1240"].source_url
+      //   : "",
+      author: post._embedded.author[0].name,
+    }
+    const contentDigest = crypto
+      .createHash(`md5`)
+      .update(JSON.stringify(node))
+      .digest(`hex`)
+    node.internal.contentDigest = contentDigest
+    createNode(node)
   }
-  
-};
+}
 
 exports.createPages = async ({ graphql, actions }) => {
   // await createShopPage(graphql, actions)
@@ -98,21 +106,16 @@ exports.createPages = async ({ graphql, actions }) => {
       String(post.id) === "127309" ||
       String(post.id) === "127310"
     ) {
-      if(post.slug && post) {
-      createPage({
-        path: `read/${post.slug}`,
-        component: path.resolve(`./src/templates/post.js`),
-        context: {
-          slug: `read/${post.slug}`,
-          post,
-        },
-      })
-    }
+      if (post && post.slug) {
+        createPage({
+          path: `read/${post.slug}`,
+          component: path.resolve(`./src/templates/post.js`),
+          context: {
+            slug: `read/${post.slug}`,
+            post,
+          },
+        })
+      }
     }
   }
 }
-
-
-
-
-

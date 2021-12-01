@@ -3,7 +3,6 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import {
   AuthorCard,
-  Button,
   Draw,
   Catalogue,
   Header,
@@ -42,33 +41,6 @@ const author3 = {
 const author4 = {
   name: "Iolo Edwards"
 }
-
-const posts = [
-  {
-    title: "LV×Supreme Retrospective",
-    excerpt:
-      "Louis Vuitton created the ultimate collection when it joined forces with streetwear giant Supreme.",
-    author: "Emily Jensen",
-  },
-  {
-    title: "LV×Supreme Retrospective",
-    excerpt:
-      "Louis Vuitton created the ultimate collection when it joined forces with streetwear giant Supreme.",
-    author: "Emily Jensen",
-  },
-  {
-    title: "LV×Supreme Retrospective",
-    excerpt:
-      "Louis Vuitton created the ultimate collection when it joined forces with streetwear giant Supreme.",
-    author: "Emily Jensen",
-  },
-  {
-    title: "LV×Supreme Retrospective",
-    excerpt:
-      "Louis Vuitton created the ultimate collection when it joined forces with streetwear giant Supreme.",
-    author: "Emily Jensen",
-  },
-]
 
 const getSVG = () => {
   const SVGS = [Backpack, Bandana, Belt, Duffle, Shirt, Shoe, Skateboard, Trunk, Wallet];
@@ -135,8 +107,6 @@ const IndexPage = () => {
   const products = data.products?.edges?.map(({node})=> node.data);
   const featured = data.featured?.edges?.map(({node})=>node)
   const posts = data.posts?.edges?.map(({node})=> node);
-
-  console.log(featured)
   
   return (
   <Layout>
@@ -148,11 +118,10 @@ const IndexPage = () => {
       subTitle="In Partnership with Sotheby’s"
     >
       <div className="mt-12 lg:mt-24"><Draw svg={getSVG()} start="autostart" /></div>
-      {/* <div className="absolute bottom-0 right-0 transform translate-x-1/2"><Draw svg={Trunk} /></div> */}
     </Hero>
     <Section title="Introduction">
     <div className="max-w-4xl mx-auto">
-    {featured.map((post)=><PostCard size="large" post={post} />)}
+    {featured.map((post)=><React.Fragment key={`featured-${post.id}`}><PostCard size="large" post={post} /></React.Fragment>)}
     </div>
     </Section>
     <Section title="Newsletter">
@@ -160,13 +129,11 @@ const IndexPage = () => {
     </Section>
     <Section title="Reading">
       <div className="reading-grid gap-8 items-center">
-      {posts.map((post)=><PostCard post={post} />)}
+      {posts.map((post)=><React.Fragment key={`reading-${post.id}`}><PostCard post={post} /></React.Fragment>)}
       </div>
     </Section>
     <Section title="Catalogue">
-      {}
       <Catalogue products={products} />
-      {/* <Button text="Shop Full Catalogue" url="/shop" /> */}
     </Section>
     <Section title="Through Experts Eyes">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 max-w-6xl mx-auto">
@@ -196,7 +163,7 @@ const IndexPage = () => {
     </Section>
     <Section title="Further Readings">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {posts.map((post)=><PostCard size="small" post={post} />)}
+        {posts.map((post)=><React.Fragment key={`further-reading-${post.id}`}><PostCard size="small" post={post} /></React.Fragment>)}
       </div>
       <div className="flex items-center justify-center mt-24"><Link className="primary-button" to="/read">View All Articles</Link></div>
 

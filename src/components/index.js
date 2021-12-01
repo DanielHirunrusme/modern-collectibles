@@ -1,5 +1,5 @@
 export { default as AuthorCard } from './authorCard'
-export { default as Button } from './button'
+// export { default as Button } from './button'
 export { default as Catalogue } from './catalogue'
 export { default as Draw } from './draw'
 export { default as Footer } from './footer'
