@@ -10,38 +10,6 @@ const ShopPage = ({ data }) => {
   const flattenedData = allAirtableData?.map(({ node }) => node.data)
   const memoData = React.useMemo(() => flattenedData, [flattenedData])
 
-  const testData = React.useMemo(
-    () => [
-      {
-        col1: "Hello",
-        col2: "World",
-      },
-      {
-        col1: "react-table",
-        col2: "rocks",
-      },
-      {
-        col1: "whatever",
-        col2: "you want",
-      },
-    ],
-    []
-  )
-
-  const testColumns = React.useMemo(
-    () => [
-      {
-        Header: "Column 1",
-        accessor: "col1", // accessor is the "key" in the data
-      },
-      {
-        Header: "Column 2",
-        accessor: "col2",
-      },
-    ],
-    []
-  )
-
   const columns = React.useMemo(
     () => [
       {
@@ -50,7 +18,7 @@ const ShopPage = ({ data }) => {
       },
       {
         Header: "Title",
-        accessor: row => (<span className="uppercase">{row.Title}</span>)
+        accessor: row => <p className="truncate">{row.Title}</p>,
       },
       // {
       //   Header: "Collection",
@@ -62,7 +30,16 @@ const ShopPage = ({ data }) => {
       // },
       {
         Header: "Price",
-        accessor: row => <span>${row.Price}</span>,
+        accessor: row => {
+          console.log(row)
+          return <span className="text-right md:text-left">{row.Status === "Available" ? (
+            <a className="group text-right md:text-left" href="https://www.google.com">
+              <span className="block">${row.Price}</span>
+            </a>
+          ) : (
+            <s className="text-right block md:text-left">${row.Price}</s>
+          )}</span>
+        },
       },
       {
         Header: "Status",
@@ -87,10 +64,10 @@ const ShopPage = ({ data }) => {
     <Layout>
       <Seo title="Shop" />
       <div id="Shop" className="pt-20 max-w-6xl mx-auto">
-        <div className="pb-20">
-          {/* <h1 className="md:text-base uppercase">Louis Vuitton x Supreme</h1> */}
+        <div className="mb-3">
+          <h1 className="text-base md:text-xl text-left ">The Louis Vuitton×Supreme Collection</h1>
           {/* <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et.</p> */}
-         </div>
+        </div>
         <Table columns={columns} data={memoData} />
       </div>
     </Layout>

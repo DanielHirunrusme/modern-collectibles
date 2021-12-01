@@ -1,28 +1,56 @@
 table {
-    @apply border-none font-normal w-full;
-    th, td {
-        @apply font-normal;
-    }
+  @apply border-none font-normal w-full;
+  th,
+  td {
+    @apply font-normal;
+  }
 
-    th {
-        // @apply border-t border-black;
-        // border-top-width: .5px;
-    }
+  th {
+      @apply uppercase;
+    // @apply border-t border-black;
+    // border-top-width: .5px;
+  }
 
-    th,
-    td {
-        @apply text-left;
-        // @apply border-b border-black text-left;
-        // border-bottom-width: .5px;
-    }
+  th,
+  td {
+    @apply text-left;
+    // @apply border-b border-black text-left;
+    // border-bottom-width: .5px;
+  }
 }
 
 // Shop table
 #Shop table {
-    th:first-child, th:first-child {
-        @apply md:w-16 md:mr-3;
+
+thead {
+    @apply bg-white sticky h-12;
+    top: 64.5px;
+    box-shadow: 0 -.5px 0 0 black; /* Border top */
+}
+
+  th:first-child,
+  td:first-child {
+    @apply md:w-16 md:mr-3 hidden md:table-cell;
+  }
+  th:last-child,
+  td:last-child {
+    @apply md:w-20 hidden md:table-cell;
+  }
+  th:nth-child(3),
+  td:nth-child(3) {
+      @apply text-right md:text-left;
+  }
+  th:nth-child(2),
+  td:nth-child(2) {
+    max-width: calc(100vw - 8rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @screen md {
+      @apply w-auto;
     }
-    th:last-child, td:last-child {
-        @apply md:w-20;
-    }
+  }
+
+  .title {
+  }
 }

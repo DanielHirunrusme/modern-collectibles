@@ -1,5 +1,7 @@
 .rte {
 
+    @apply max-w-6xl mx-auto;
+
     p + p:not(:last-child) {
         margin-top: 1em;
     }

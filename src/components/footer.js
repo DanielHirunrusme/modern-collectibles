@@ -17,11 +17,11 @@ const Footer = () => (
   <footer className="max-w-6xl mx-auto flex flex-col pt-48">
     <nav className=" w-full flex flex-col-reverse md:flex-row flex-1 mx-auto justify-center md:justify-between items-center">
       <a className="mr-3 flex">
-        <JingDaily />
-        &copy;2021
+        {/* <JingDaily /> */}
+        &copy; 2021
       </a>
       <ul className="flex flex-col md:flex-row items-center my-6">
-        <li className="mr-3">
+        <li className="mr-3 hidden lg:block">
           <a
             href="#"
             title="Jing Culture and Commerice"
@@ -30,18 +30,22 @@ const Footer = () => (
             Culture &amp; Commerce
           </a>
         </li>
-        <li className="mr-3 hidden md:block">|</li>
-        <li className="mr-3">
+        <li className="mr-3 hidden lg:block">|</li>
+        <li className="mr-3 hidden lg:block">
           <a href="#" title="China Film Insider">
             China Film Insider
           </a>
         </li>
-        <li className="mr-3 hidden md:block">|</li>
+        <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3">
           <Link to="/advertise">Advertise</Link>
         </li>
+        <li className="mr-3 hidden md:block">|</li>
+        <li className="mr-3">
+          <Link to="/about#contact">Contact</Link>
+        </li>
       </ul>
-      <nav className="grid grid-cols-5 gap-3 text-sm items-center">
+      <nav className="grid grid-cols-5 gap-3 text-base items-center">
         <a
           href="https://www.facebook.com/jingdaily/"
           title="Jing Daily Facebook"
