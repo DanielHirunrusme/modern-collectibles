@@ -31,7 +31,6 @@ const ShopPage = ({ data }) => {
       {
         Header: "Price",
         accessor: row => {
-          console.log(row)
           return <span className="text-right md:text-left">{row.Status === "Available" ? (
             <a className="group text-right md:text-left" href="https://www.google.com">
               <span className="block">${row.Price}</span>

@@ -1,0 +1,15 @@
+.catalogue-strip {
+    @apply h-48;
+    div.card {
+        flex: 0 0 12rem;
+        @apply h-48;
+    }
+}
+
+.hide-scroll-bar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scroll-bar::-webkit-scrollbar {
+    display: none;
+  }

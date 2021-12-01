@@ -1,3 +1,27 @@
 .post-card[data-size="small"] {
     @apply aspect-w-12 aspect-h-12 border border-black;
 }
+
+.reading-grid {
+
+}
+
+.reading-grid {
+    
+    @screen md {
+        @apply grid;
+        grid-template-columns: repeat( 4, 1fr );
+    }
+}
+
+.reading-grid article {
+    @apply mb-8;
+    
+    @screen md {
+        grid-column: span 2;
+    }
+}
+
+.reading-grid article:nth-last-child(1):nth-child(odd) {
+    grid-column: 2 / span 2;
+}

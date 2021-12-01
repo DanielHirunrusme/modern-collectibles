@@ -4,3 +4,11 @@
         width: 78px;
     }
 }
+
+header {
+    nav {
+        a:hover, a[aria-current="page"] {
+            border-bottom:1px solid #000;
+        }
+    }
+}

@@ -31,14 +31,12 @@ const crypto = require("crypto")
 //   // const projectEdges = (result.data.allSanityProject || {}).edges || []
 //   const shopEdges = result.data;
 
-//   console.log(shopEdges);
 // }
 
 // part two
 exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions;
 
-  console.log('creating sourceNodes')
   const allPosts = await (
     await fetch(
       "https://jingdaily.com/wp-json/wp/v2/posts?filter[tag]=17457&_embed"
@@ -47,7 +45,9 @@ exports.sourceNodes = async ({ actions }) => {
 
   for (const post of allPosts) {
     // create node for graphql
-    console.log('creating node')
+    // console.log('creating node')
+    // console.log('post._embedded.author[0].name', post._embedded.author[0].name);
+    // console.log("post._embedded['wp:featuredmedia'][0].source_url", post._embedded['wp:featuredmedia'][0].source_url)
     const node = {
       id: `${post.id}`,
       parent: `__SOURCE__`,
@@ -63,9 +63,9 @@ exports.sourceNodes = async ({ actions }) => {
       date: post.date,
       content: post.content?.rendered,
       excerpt: post.excerpt?.rendered,
-      featured_media: post._embedded['wp:featuredmedia']?.source_url ? post._embedded['wp:featuredmedia'].source_url : '' ,
+      featured_media: post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0] && post._embedded['wp:featuredmedia'][0]?.source_url ? post._embedded['wp:featuredmedia'][0].source_url : '' ,
       og_image: post._embedded?.media_details?.sizes['post-thumbnail-1240']?.source_url ? post._embedded.media_details.sizes['post-thumbnail-1240'].source_url : '',
-      author: post._embedded.author.name
+      author: post._embedded.author[0].name
     };
     const contentDigest = crypto.createHash(`md5`).update(JSON.stringify(node)).digest(`hex`);
     node.internal.contentDigest = contentDigest;
@@ -92,15 +92,12 @@ exports.createPages = async ({ graphql, actions }) => {
   ).json()
   for (const post of allPosts) {
     // const blocks = await (await fetch(‘http://some-api.com/post/’ + post.id)).json();
-    // console.log("post slug", post.slug)
-    console.log("post id", post.id)
     if (
       String(post.id) === "127307" ||
       String(post.id) === "127308" ||
       String(post.id) === "127309" ||
       String(post.id) === "127310"
     ) {
-      console.log('createPage')
       createPage({
         path: `read/${post.slug}`,
         component: path.resolve(`./src/templates/post.js`),

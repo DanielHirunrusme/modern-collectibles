@@ -1,36 +1,82 @@
 import * as React from "react"
-import {Hero, Layout, Seo} from "../components";
+import { Hero, Layout, Seo } from "../components"
 import {
   EmailShareButton,
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
   WhatsappShareButton,
-} from "react-share";
+} from "react-share"
 
 const Post = ({ pageContext }) => {
-  const {slug, post} = pageContext;
-  console.log(post);
+  const { slug, post } = pageContext
+  console.log(post)
   return (
     <Layout>
       <Seo title="Post" />
       <Hero title={post.title?.rendered}>
-        <div className="max-w-md mx-auto mt-24">
-          <img className="w-48 md:w-full md:max-w-sm lg:max-w-md mx-auto mt-24" src="https://jingdaily.com/wp-content/uploads/2021/11/LVS_Collectors_0_Hero_BW.jpg" />
-        </div>
+        {post._embedded["wp:featuredmedia"] &&
+          post._embedded["wp:featuredmedia"][0] &&
+          post._embedded["wp:featuredmedia"][0]?.source_url && (
+            <div className="max-w-md mx-auto mt-24">
+              <img
+                className="w-48 md:w-full md:max-w-sm lg:max-w-md mx-auto mt-24"
+                src={post._embedded["wp:featuredmedia"][0]?.source_url}
+              />
+            </div>
+          )}
       </Hero>
-      <article className="rte px-4 lg:px-0">
-        <div className="max-w-6xl mx-auto" dangerouslySetInnerHTML={ { __html: post.content?.rendered } }></div>
-        
+      <article className="rte">
+        <div
+          className="max-w-6xl mx-auto"
+          dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
+        ></div>
+
         <div className="max-w-6xl mx-auto my-32">
-          SHARE:&nbsp;
-          <EmailShareButton subject={post.title?.rendered} body="" separator=" | " url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}>Email</EmailShareButton>&nbsp;
-          <FacebookShareButton quote="">Facebook</FacebookShareButton>&nbsp;
-          <LinkedinShareButton title={post.title?.rendered} summary="" source="" url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}>LinkedIn</LinkedinShareButton>&nbsp;
-          <TwitterShareButton title={post.title?.rendered} via="jingdaily" url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}>Twitter</TwitterShareButton>&nbsp;
-          <WhatsappShareButton title={post.title?.rendered} url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}>WhatsApp</WhatsappShareButton>
+          <ul className="flex flex-col md:flex-row">
+            <li className="mr-4">SHARE:</li>
+            <li className="mr-4">
+              <EmailShareButton
+                subject={post.title?.rendered}
+                body=""
+                separator=" | "
+                url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}
+              >
+                Email
+              </EmailShareButton>
+            </li>
+            <li className="mr-4">
+              <FacebookShareButton quote="">Facebook</FacebookShareButton>
+            </li>
+            <li className="mr-4">
+              <LinkedinShareButton
+                title={post.title?.rendered}
+                summary=""
+                source=""
+                url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}
+              >
+                LinkedIn
+              </LinkedinShareButton>
+            </li>
+            <li className="mr-4">
+              <TwitterShareButton
+                title={post.title?.rendered}
+                via="jingdaily"
+                url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}
+              >
+                Twitter
+              </TwitterShareButton>
+            </li>
+            <li className="mr-4">
+              <WhatsappShareButton
+                title={post.title?.rendered}
+                url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}
+              >
+                WhatsApp
+              </WhatsappShareButton>
+            </li>
+          </ul>
         </div>
-      
       </article>
     </Layout>
   )

@@ -1,5 +1,5 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React, {useState} from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import {
   AuthorCard,
@@ -15,17 +15,17 @@ import {
   Seo,
 } from "../components/index"
 
-import Backpack from "../static/backpack.svg"
-import Bandana from "../static/bandana.svg"
-import Belt from "../static/belt.svg"
-import Clutch from "../static/clutch.svg"
-import Duffle from "../static/duffle.svg"
-import Hoodie from "../static/hoodie.svg"
-import Shirt from "../static/shirt.svg"
-import Shoe from "../static/shoe.svg"
-import Skateboard from "../static/skateboard.svg"
-import Trunk from "../static/trunk.svg"
-import Wallet from "../static/wallet.svg"
+import Backpack from "../../static/backpack.svg"
+import Bandana from "../../static/bandana.svg"
+import Belt from "../../static/belt.svg"
+import Clutch from "../../static/clutch.svg"
+import Duffle from "../../static/duffle.svg"
+import Hoodie from "../../static/hoodie.svg"
+import Shirt from "../../static/shirt.svg"
+import Shoe from "../../static/shoe.svg"
+import Skateboard from "../../static/skateboard.svg"
+import Trunk from "../../static/trunk.svg"
+import Wallet from "../../static/wallet.svg"
 
 const author1 = {
   name: "Michael Lau"
@@ -78,7 +78,67 @@ const getSVG = () => {
   return SVG;
 }
 
-const IndexPage = () => (
+const IndexPage = () => { 
+  
+  const data = useStaticQuery(graphql`query FeaturedPosts {
+    featured: allApiPost(filter: {id: {in: ["127307"]}}) {
+      edges {
+        node {
+          title
+          id
+          excerpt
+          featured_media
+          slug
+        }
+      }
+    }
+    posts: allApiPost(filter: {id: {in: ["127308", "127309", "127310"]}}) {
+      edges {
+        node {
+          title
+          id
+          excerpt
+          featured_media
+          slug
+        }
+      }
+    }
+    products: allAirtable {
+      edges {
+        node {
+          data {
+            Year
+            Title
+            Status
+            Price
+            ID
+            Collection
+            Images {
+              thumbnails {
+                small {
+                  url
+                }
+                large {
+                  url
+                }
+                full {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }`)
+
+  const products = data.products?.edges?.map(({node})=> node.data);
+  const featured = data.featured?.edges?.map(({node})=>node)
+  const posts = data.posts?.edges?.map(({node})=> node);
+
+  console.log(featured)
+  
+  return (
   <Layout>
     <Seo title="Home" />
     <div></div>
@@ -87,25 +147,32 @@ const IndexPage = () => (
       title="LV×Supreme"
       subTitle="In Partnership with Sotheby’s"
     >
-      <div className="lg:mt-24"><Draw svg={getSVG()} start="autostart" /></div>
+      <div className="mt-12 lg:mt-24"><Draw svg={getSVG()} start="autostart" /></div>
       {/* <div className="absolute bottom-0 right-0 transform translate-x-1/2"><Draw svg={Trunk} /></div> */}
     </Hero>
-    {/* <PostCard post={firstPost} /> */}
+    <Section title="Introduction">
+    <div className="max-w-4xl mx-auto">
+    {featured.map((post)=><PostCard size="large" post={post} />)}
+    </div>
+    </Section>
     <Section title="Newsletter">
       <Newsletter />
     </Section>
     <Section title="Reading">
-      {/* {posts.map((post)=><PostCard post={post} />)} */}
+      <div className="reading-grid gap-8 items-center">
+      {posts.map((post)=><PostCard post={post} />)}
+      </div>
     </Section>
     <Section title="Catalogue">
-      {/* <Catalogue slides={slides} /> */}
+      {}
+      <Catalogue products={products} />
       {/* <Button text="Shop Full Catalogue" url="/shop" /> */}
     </Section>
     <Section title="Through Experts Eyes">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 max-w-6xl mx-auto">
         <div className="">
           <h4>WHO ARE THE EXPERTS?</h4>
-          <p>
+          <p> 
             At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
             kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
             amet. Lorem ipsum dolor sit amet, consetetur elitr, sed diam clita
@@ -136,5 +203,6 @@ const IndexPage = () => (
     </Section>
   </Layout>
 )
+}
 
 export default IndexPage

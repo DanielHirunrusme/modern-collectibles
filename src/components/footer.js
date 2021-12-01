@@ -14,7 +14,7 @@ import {
 import { JingDaily } from "../svgs"
 
 const Footer = () => (
-  <footer className="max-w-6xl mx-auto flex flex-col pt-48">
+  <footer className="max-w-6xl mx-auto flex flex-col pt-48 mb-8 md:mb-0">
     <nav className=" w-full flex flex-col-reverse md:flex-row flex-1 mx-auto justify-center md:justify-between items-center">
       <a className="mr-3 flex">
         {/* <JingDaily /> */}
@@ -45,7 +45,7 @@ const Footer = () => (
           <Link to="/about#contact">Contact</Link>
         </li>
       </ul>
-      <nav className="grid grid-cols-5 gap-3 text-base items-center">
+      <nav className="grid grid-cols-5 gap-3 items-center">
         <a
           href="https://www.facebook.com/jingdaily/"
           title="Jing Daily Facebook"
