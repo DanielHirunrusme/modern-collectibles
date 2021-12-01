@@ -78,12 +78,12 @@ exports.createPages = async ({ graphql, actions }) => {
   // await createShopPage(graphql, actions)
 
   const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
-  })
+  // createPage({
+  //   path: "/using-dsg",
+  //   component: require.resolve("./src/templates/using-dsg.js"),
+  //   context: {},
+  //   defer: true,
+  // })
 
   const allPosts = await (
     await fetch(
@@ -98,6 +98,7 @@ exports.createPages = async ({ graphql, actions }) => {
       String(post.id) === "127309" ||
       String(post.id) === "127310"
     ) {
+      if(post.slug && post) {
       createPage({
         path: `read/${post.slug}`,
         component: path.resolve(`./src/templates/post.js`),
@@ -106,6 +107,7 @@ exports.createPages = async ({ graphql, actions }) => {
           post,
         },
       })
+    }
     }
   }
 }
