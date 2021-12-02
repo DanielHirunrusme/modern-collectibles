@@ -30,6 +30,51 @@ table.border, table.border th, table.border td {
     border: 1px solid black;
 }
 
+// Timeline table
+table.timeline {
+  @apply mt-24 border-b border-black;
+
+  .wp-caption {
+    @apply text-center mx-8;
+  }
+
+  tr {
+    @apply table-row;
+    td {
+      @apply align-top w-1/2;
+      &:before {
+        content: '';
+        @apply mb-8 border-t border-black w-full sticky block;
+        top: 68px;
+      }
+      
+    }
+      td:nth-child(2) {
+        // @apply border-r border-black;
+        @apply relative pb-16;
+        & > * {
+          @apply ml-8 block;
+        }
+        &:after {
+          content: '';
+          @apply border-r border-black absolute block left-0;
+          height: calc(100% - 2rem);
+          top: 1rem;
+        }
+
+      }
+    td:first-child {
+      // @apply border-r border-black;
+      @apply relative;
+
+      h3 {
+        @apply sticky text-left md:text-3xl m-0 mb-8;
+        top: 80px;
+      }
+    }
+  }
+}
+
 // Shop table
 #Shop table {
     

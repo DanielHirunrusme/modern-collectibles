@@ -20,7 +20,7 @@ const Footer = () => (
         {/* <JingDaily /> */}
         &copy; 2021
       </a>
-      <ul className="hidden md:flex flex-col md:flex-row items-center my-6">
+      <ul className="hidden list-nav md:flex flex-col md:flex-row items-center my-6">
         <li className="mr-3 hidden lg:block">
           <a
             href="https://jingculturecommerce.com/"

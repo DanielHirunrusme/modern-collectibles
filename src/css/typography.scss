@@ -62,3 +62,12 @@ path {
 
     }
 }
+
+.arrow {
+    path {
+        stroke-width: .75px !important;
+    }
+    &:hover {
+        fill: #000;
+    }
+}

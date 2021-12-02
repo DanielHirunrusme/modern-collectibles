@@ -65,8 +65,8 @@ const Popup = ({ children, content, product }) => {
         </div> :
         <div className="">
           <div className="m-8">
-            <p>{product.Title}, ${product.Price}</p>
-            <div className="mb-4">
+            <p className="mr-4">{product.Title}, ${product.Price}</p>
+            <div className="my-8">
               <img   src={product.Images[0].thumbnails.full.url} alt={product.Title} />
             </div>
             {product.Status === "Available" ? <a href="#" className="primary-button w-full">Buy</a> : <span className="primary-button w-full block opacity-25 pointer-events-none">Sold Out</span>}

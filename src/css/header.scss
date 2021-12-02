@@ -5,10 +5,8 @@
     }
 }
 
-header {
-    nav.main-nav {
-        a:hover, a[aria-current="page"] {
-            border-bottom:1px solid #000;
-        }
+.list-nav {
+    a:hover, a[aria-current="page"] {
+        border-bottom:1px solid #000;
     }
 }

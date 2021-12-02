@@ -10,6 +10,7 @@ const Draw = ({svg, start = "inViewPort", caption}) => {
   <div>
     <ReactVivus
     id="HeroSVG"
+    className="max-h-screen md:h-screen"
       option={{
         file: svg.svg,
         start: start,

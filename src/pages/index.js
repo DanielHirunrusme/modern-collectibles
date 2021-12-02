@@ -32,7 +32,7 @@ const author1 = {
   name: "Sarah Andelman",
   image: "../../images/LVS_Experts_Sarah.png",
   pick: "Mickey×Damien Hirst×Swatch",
-  description: `"It’s so difficult to just pick one. I think of the recent one like Supreme x Tiffany, I think of old ones like Hello Kitty x Playboy, or KAWS x CDG during Colette. I think of the ones I helped with my new company like APC x Sacai or Undercover x Valentino. I'd also like to mention the Café de Flore x Highsnobiety which I worked on. But in the end, I’ll pick Mickey x Damien Hirst x Swatch. In my eyes, it means "everything is possible. There's no more limit on how any brand or any artist can collaborate together. Now, people get it and want this kind of crossover. But I also appreciate the union of three icons: iconic character, iconic brand, iconic artist. And the result is a perfect balance of all this creativity."`
+  description: `"It’s so difficult to just pick one. I think of the recent one like Supreme×Tiffany, I think of old ones like Hello Kitty×Playboy, or KAWS x CDG during Colette. I think of the ones I helped with my new company like APC×Sacai or Undercover x Valentino. I'd also like to mention the Café de Flore x Highsnobiety which I worked on. But in the end, I’ll pick Mickey×Damien Hirst×Swatch. In my eyes, it means "everything is possible. There's no more limit on how any brand or any artist can collaborate together. Now, people get it and want this kind of crossover. But I also appreciate the union of three icons: iconic character, iconic brand, iconic artist. And the result is a perfect balance of all this creativity."`
 }
 
 const author2 = {
@@ -60,7 +60,7 @@ const getSVG = () => {
   const SVGS = [Backpack, Bandana, Belt, Duffle, Shirt, Shoe, Skateboard, Trunk, Wallet];
   const Names = ["Christopher Backpack", "Monogram Bandana", "LV Initiales 40 MM Belt 100CM", "Keepall 45", "Jacquard Denim Baseball Jersey", "Run Away Sneaker", "Skateboard", "Trunk", "Porte Carte Simple Red"];
   const rand = Math.floor(Math.random()*SVGS.length);
-  const SVG = {svg: SVGS[rand], caption: `The ${Names[rand]} part of the LVxSupreme 2017 collection. Shop All`};
+  const SVG = {svg: SVGS[rand], caption: `The ${Names[rand]} part of the LVxSupreme 2017 collection. Shop All →`};
   return SVG;
 }
 
@@ -138,9 +138,9 @@ const IndexPage = () => {
 
     <Hero
       title="Louis Vuitton×Supreme"
-      subTitle="In Partnership with Sotheby’s"
+      subTitle="Jing Daily in Partnership with Sotheby’s"
     >
-      <div className="my-24 lg:mt-24 lg:mb-0"><Draw svg={getSVG()} start="autostart" /></div>
+      <div className="my-24 lg:mt-24 lg:mb-0 max-h-screen"><Draw svg={getSVG()} start="autostart" /></div>
     </Hero>
     <Section title="Introduction">
     <div className="max-w-4xl mx-auto">
@@ -169,7 +169,7 @@ const IndexPage = () => {
           For more information about future modern collectibles, join our mailing list.
           </p>
           <br />
-          <Link to="/subscribe">SUBSCRIBE TO NEWSLETTER</Link>
+          <a href="#Newsletter">SUBSCRIBE TO NEWSLETTER</a>
         </div>
         <div className="grid grid-cols-2 gap-8 uppercase text-center md:-mt-3">
           <Popup content={author1.description}><AuthorCard author={author1} num={1} /></Popup>

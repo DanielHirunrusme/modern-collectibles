@@ -32,9 +32,9 @@ Jing Daily is the flagship publication of the Jing Group, which also includes Ch
 </Section>
         <Section title="Inquiries">
             <div id="Contact" className="grid grid-cols-2 gap-8 text-center max-w-xl mx-auto">
-            <div className="aspect-w-4 aspect-h-4 border flex items-center justify-center border-black"><a href="mailto:editorial@jingdaily.com" className="flex items-center justify-center">EDITORIAL</a></div>
+            <div className="aspect-w-4 aspect-h-4 border flex items-center justify-center border-black"><a href="mailto:editorial@jingdaily.com" className="default-button flex items-center justify-center">EDITORIAL</a></div>
                 <div className="aspect-w-4 aspect-h-4 border  flex items-center justify-center border-black">
-<a href="mailto:daphne@jingdaily.com" className="flex items-center justify-center">PARTNERSHIP</a></div>
+<a href="mailto:daphne@jingdaily.com" className="default-button flex items-center justify-center">PARTNERSHIP</a></div>
 
             </div>
 </Section>
