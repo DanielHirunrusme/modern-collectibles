@@ -63,7 +63,7 @@ const AuthorCard = ({ size, author, num }) => {
     <div className="aspect-w-4 aspect-h-5 border flex flex-col justify-between border-black hover:bg-black hover:text-white">
       {name && <h4 className="mt-3">{name}</h4>}
       {num && (
-        <div className="p-16 m-auto flex items-center justify-center">
+        <div className="p-8 md:p-16 m-auto flex items-center justify-center">
           {getImage(num)}
         </div>
       )}
