@@ -52,7 +52,7 @@ const Catalogue = ({ products }) => {
     <div className="">
       {/* Arrows */}
       <div className="grid grid-cols-12 h-full">
-      <div className="col-span-1">
+      <div className="col-span-1 -ml-8 md:ml-0">
         <button onClick={slickPrev} className="sticky top-1/2 col-span-1">
           <svg
             width="48"
@@ -78,7 +78,7 @@ const Catalogue = ({ products }) => {
       </div>
 
       <div className="col-span-1 order-last text-right items-end">
-        <button onClick={slickNext} className="sticky top-1/2 col-span-1">
+        <button onClick={slickNext} className="ml-3 md:ml-0  sticky top-1/2 col-span-1">
           <svg
             width="48"
             height="48"

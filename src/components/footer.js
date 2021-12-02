@@ -49,7 +49,7 @@ const Footer = () => (
         </li>
         <li className="mr-3 hidden md:block">|</li>
         <li className="mr-3">
-          <Link to="/about#contact">Contact</Link>
+          <Link to="/about#Contact">Contact</Link>
         </li>
       </ul>
       <nav className="hidden md:grid grid-cols-6 gap-3 items-center text-xs">
@@ -98,7 +98,7 @@ const Footer = () => (
                 <li><a href="#" title="Instagram">Instagram</a></li>
             </ul> */}
     </nav>
-    <small className="uppercase mt-2">Jing Daily Modern Collectibles is a Trademark of Jing Daily.</small>
+    <small className="uppercase mt-2">Jing Daily Modern Collectibles is a Trademark of Jing Daily.<br />Jing Daily offers resale of collectibles through consignment but is not otherwise affiliated with any featured brands</small>
     {/* <nav className="text-xs grid grid-cols-5 gap-2 items-end mb-px">
             <a href="https://www.facebook.com/jingdaily/" title="Jing Daily Facebook"><FontAwesomeIcon icon={faFacebookF} /></a>
             <a href="weixin://dl/chat?Jing_Daily_China" title="Jing Daily WeChat"><FontAwesomeIcon icon={faWeixin} /></a>

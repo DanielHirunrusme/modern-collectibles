@@ -79,7 +79,7 @@ const IndexPage = () => {
         }
       }
     }
-    posts: allApiPost(filter: {id: {in: ["127307", "127308", "127309", "127310"]}}) {
+    posts: allApiPost(filter: {id: {in: ["127308", "127309", "127310"]}}) {
       edges {
         node {
           title
