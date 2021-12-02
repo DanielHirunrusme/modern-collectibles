@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import ReactDOM from "react-dom"
 import Modal from "styled-react-modal"
 
-const Popup = ({ children, content }) => {
+const Popup = ({ children, content, product }) => {
+  console.log({product})
   const StyledModal = Modal.styled`
   width: 100%;
   max-width: 20rem;
@@ -31,7 +32,7 @@ const Popup = ({ children, content }) => {
       >
         <button
           onClick={toggleModal}
-          className="absolute top-0 right-0 w-6 h-6"
+          className="absolute top-0 right-0 w-6 h-6 m-2"
         >
           <svg
             width="24"
@@ -59,9 +60,19 @@ const Popup = ({ children, content }) => {
             />
           </svg>
         </button>
-        <div className="text-sm">
+        {!product ? <div className="text-sm">
           <div className="m-8">{content}</div>
+        </div> :
+        <div className="">
+          <div className="m-8">
+            <p>{product.Title}, ${product.Price}</p>
+            <div className="mb-4">
+              <img   src={product.Images[0].thumbnails.full.url} alt={product.Title} />
+            </div>
+            {product.Status === "Available" ? <a href="#" className="primary-button w-full">Buy</a> : <span className="primary-button w-full block opacity-25 pointer-events-none">Sold Out</span>}
+          </div>
         </div>
+  }
       </StyledModal>
     </>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { ProductCard } from "./"
+import { ProductCard, Popup } from "./"
 import Slider from "react-slick"
 
 // 1. Get products
@@ -36,11 +36,11 @@ const Catalogue = ({ products }) => {
              
             <div className="w-36 h-52 flex justify-between flex-col  max-w-xs overflow-hidden border border-black bg-white ">
             <div className="m-1">
-            {product.Images && product.Images[0] && <img src={product.Images[0].thumbnails.large.url} />}
+            <Popup product={product}>{product.Images && product.Images[0] && <img src={product.Images[0].thumbnails.large.url} />}</Popup>
             </div>
-            <div className="flex border-t border-black">
-              <a className="flex-1 w-1/2 text-center border-r border-black p-4 block">View</a>
-              <a className="flex-1 w-1/2 text-center p-4 block">Buy</a>
+            <div className="grid grid-cols-2 border-t border-black">
+              <Popup product={product}><button className="text-center hover:bg-black hover:text-white border-r border-black p-4">View</button></Popup>
+              <a className="text-center p-4 block hover:bg-black hover:text-white">Buy</a>
             </div>
               </div>
               {/* <div className="mt-2">{product.Title}<br/>${product.Price}</div> */}

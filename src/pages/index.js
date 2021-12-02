@@ -127,6 +127,8 @@ const IndexPage = () => {
   const products = data.products?.edges?.map(({node})=> node.data);
   const featured = data.featured?.edges?.map(({node})=>node)
   const posts = data.posts?.edges?.map(({node})=> node);
+
+  console.log({products});
   
   return (
     <ModalProvider>

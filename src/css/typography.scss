@@ -1,28 +1,27 @@
 
 body {
-    font-family: 'noMono', 'multiplyH1', 'IPAMincho', "SimSun", "NSimSun", "SimSun-ExtB", "ST FangSong", "ST FangSong 2", "MSMincho", "PMingLiu", simsun, monospace, sans-serif !important;
+    font-family: 'noMono', 'multiplyH1', 'IPAMincho', 'Mincho', "SimSun", "NSimSun", "SimSun-ExtB", "ST FangSong", "ST FangSong 2", "MSMincho", "PMingLiu", simsun, monospace, sans-serif !important;
     @apply md:text-xl;
     
 }
 
 
 @font-face {
-    font-family: 'IPAMincho';
-    src:
-        url('/IPAMincho.woff') format('woff');
+    font-family: 'Mincho';
+    src: url('/IPAMincho.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'SimSun';
-    src: url('/SimSun.woff2') format('woff2'),
-        url('/SimSun.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'SimSun';
+//     src: url('/SimSun.woff2') format('woff2'),
+//         url('/SimSun.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
 
 
 

@@ -6,9 +6,18 @@
 
 }
 
+.post-card {
+    @apply hover:bg-black hover:text-white;
+    &:hover {
+        img {
+            mix-blend-mode: hard-light;
+        }
+    }
+}
+
 .reading-grid {
     
-    @screen md {
+    @screen lg {
         @apply grid;
         grid-template-columns: repeat( 4, 1fr );
     }
@@ -17,7 +26,7 @@
 .reading-grid article {
     @apply mb-8;
     
-    @screen md {
+    @screen lg {
         @apply mb-0;
         grid-column: span 2;
     }
