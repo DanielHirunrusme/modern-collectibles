@@ -35,8 +35,11 @@ table.border, table.border th, table.border td {
     
 thead {
     @apply bg-white sticky h-16;
-    top: 68.5px;
+    top: 64.5px;
     box-shadow: 0 -.5px 0 0 black; /* Border top */
+    @screen md {
+      top: 68.5px;
+    }
 }
 
   th:first-child,

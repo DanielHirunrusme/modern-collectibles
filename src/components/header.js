@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <>
       {!menuOpen ? (
-        <header className="fixed bg-white left-0 top-0 w-full z-50">
+        <header className="fixed bg-white left-0 top-0 w-full z-20">
           <div className="max-w-6xl mx-8 xl:mx-auto mt-5 mb-5">
             <div className="flex justify-between">
               <h1 className="flex">
@@ -41,11 +41,19 @@ const Header = () => {
               </a>
               <button className="block md:hidden" onClick={toggleMenu}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_694_18832)">
 <rect width="24" height="24" fill="white"/>
-<line x1="8" y1="4.5" x2="24" y2="4.5" stroke="black"/>
-<line x1="8" y1="10.5" x2="24" y2="10.5" stroke="black"/>
-<line x1="8" y1="16.5" x2="24" y2="16.5" stroke="black"/>
+<line x1="-2.18557e-08" y1="3.92653" x2="24" y2="3.92653" stroke="black" stroke-width="0.5"/>
+<line x1="-2.18557e-08" y1="11.75" x2="24" y2="11.75" stroke="black" stroke-width="0.5"/>
+<line x1="-2.18557e-08" y1="19.573" x2="24" y2="19.573" stroke="black" stroke-width="0.5"/>
+</g>
+<defs>
+<clipPath id="clip0_694_18832">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
 </svg>
+
 
               </button>
             </div>
@@ -57,8 +65,8 @@ const Header = () => {
           <button className="absolute right-0 top-0 md:hidden" onClick={toggleMenu}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="24" height="24" fill="white"/>
-<line x1="10.6967" y1="4.98959" x2="22.0104" y2="16.3033" stroke="black"/>
-<line x1="9.98959" y1="16.3033" x2="21.3033" y2="4.9896" stroke="black"/>
+<line x1="3.33793" y1="20.3085" x2="20.3085" y2="3.33794" stroke="black" stroke-width="0.5"/>
+<line x1="3.69149" y1="3.33794" x2="20.662" y2="20.3085" stroke="black" stroke-width="0.5"/>
 </svg>
 
               </button>
@@ -66,7 +74,7 @@ const Header = () => {
                 <Link to="/shop">Shop</Link>
                 <Link to="/read">Read</Link>
                 <Link to="/about">About</Link>
-                <Link to="/about">Contact</Link>
+                <Link to="/about#Contact">Contact</Link>
               </nav>
           </div>
           <div className="mx-8 mb-5 flex uppercase items-center"><span className=" mr-2 md:mr-3">

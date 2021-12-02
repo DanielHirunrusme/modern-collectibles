@@ -11,24 +11,25 @@ import Slider from "react-slick"
 const Catalogue = ({ products }) => {
   console.log({ products })
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
+    fade: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   }
 
   return (
-    <div className="-mx-8">
+    <div className="">
       {/* Main Slick */}
-      <Slider options={settings}>
+      <Slider {...settings}>
       
         {products.map(product => (
           <div className="relative h-screen w-full" key={`schematic-${product.ID}`}>{product.SVG && product.SVG[0].url ? <img className="h-full w-full absolute top-0 left-0 object-contain object-center" src={product.SVG[0].url} alt={product.Title} /> : <></>}</div>
         ))}
       </Slider>
       {/* Thumbnails */}
-      <div className="flex overflow-x-scroll pb-10 hide-scroll-bar sticky bottom-0">
+      <div className="flex -mx-8 overflow-x-scroll pb-10 hide-scroll-bar sticky bottom-0">
         <div className="flex flex-nowrap ml-8 ">
         {products.map(product => (
           <div key={`product-card-${product.ID}`} className="inline-block pr-4 md:pr-8">

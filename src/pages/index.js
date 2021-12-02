@@ -10,9 +10,11 @@ import {
   Layout,
   Newsletter,
   PostCard,
+  Popup,
   Section,
   Seo,
 } from "../components/index"
+import { ModalProvider } from 'styled-react-modal'
 
 import Backpack from "../../static/backpack.svg"
 import Bandana from "../../static/bandana.svg"
@@ -115,6 +117,7 @@ const IndexPage = () => {
   const posts = data.posts?.edges?.map(({node})=> node);
   
   return (
+    <ModalProvider>
   <Layout>
     <Seo title="Home" />
     <div></div>
@@ -155,7 +158,7 @@ const IndexPage = () => {
           <Link to="/subscribe">SUBSCRIBE TO NEWSLETTER</Link>
         </div>
         <div className="grid grid-cols-2 gap-8 uppercase text-center md:-mt-3">
-          <AuthorCard author={author1} />
+          <Popup content={`"It’s so difficult to just pick one. I think of the recent one like Supreme x Tiffany, I think of old ones like Hello Kitty x Playboy, or KAWS x CDG during Colette. I think of the ones I helped with my new company like APC x Sacai or Undercover x Valentino. I'd also like to mention the Café de Flore x Highsnobiety which I worked on. But in the end, I’ll pick Mickey x Damien Hirst x Swatch. In my eyes, it means "everything is possible. There's no more limit on how any brand or any artist can collaborate together. Now, people get it and want this kind of crossover. But I also appreciate the union of three icons: iconic character, iconic brand, iconic artist. And the result is a perfect balance of all this creativity."`}><AuthorCard author={author1} /></Popup>
           <AuthorCard author={author2} />
           <AuthorCard author={author3} />
           <AuthorCard author={author4} />
@@ -173,6 +176,7 @@ const IndexPage = () => {
 
     </Section>
   </Layout>
+  </ModalProvider>
 )
 }
 

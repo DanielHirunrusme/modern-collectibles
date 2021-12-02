@@ -21,7 +21,7 @@ export const Newsletter = () => {
     <form onSubmit={(e)=>handleSubmit(e)} className="form-wrapper mb-2">
       <div className="input-wrapper">
         {/* <label for="email">Enter your email address</label> */}
-        <input onChange={(e)=> setEmail(e.target.value)} placeholder="Enter your email address" required type="email" name="email" />
+        <input onChange={(e)=> setEmail(e.target.value)} placeholder="Email address" required type="email" name="email" />
       </div>
       <button type="submit" role="submit">
         Subscribe

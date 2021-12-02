@@ -20,7 +20,7 @@ const Post = ({ pageContext }) => {
           post._embedded["wp:featuredmedia"][0]?.source_url && (
             <div className="max-w-md mx-auto mt-24">
               <img
-                className="w-48 md:w-full md:max-w-sm lg:max-w-md mx-auto mt-24"
+                className="w-full md:w-full md:max-w-sm lg:max-w-md mx-auto my-24"
                 src={post._embedded["wp:featuredmedia"][0]?.source_url}
               />
             </div>
