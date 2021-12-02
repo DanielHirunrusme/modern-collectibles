@@ -138,13 +138,13 @@ const Catalogue = ({ products }) => {
                     )}
                
                 </div>
-                <div className="grid grid-cols-2 border-t border-black">
-                  <Popup product={product}>
-                    <button className="text-center hover:bg-black hover:text-white border-r border-black p-4">
-                      View
-                    </button>
-                  </Popup>
-                  <a className="text-center p-4 block hover:bg-black hover:text-white">
+                <div className="flex border-t border-black w-full flex-1">
+                  
+                    <div className="h-full w-1/2 text-center flex items-center justify-center hover:bg-black hover:text-white border-r border-black">
+                    <Popup product={product}>View</Popup>
+                    </div>
+                  
+                  <a href={product.URL} target="_blank" className="text-center w-1/2 justify-center flex items-center hover:bg-black hover:text-white">
                     Buy
                   </a>
                 </div>

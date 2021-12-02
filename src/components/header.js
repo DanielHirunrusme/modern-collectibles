@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { JingDaily } from "../svgs"
 import { Newsletter } from "./"
-
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faFacebook,
@@ -47,7 +47,7 @@ const Header = () => {
               </nav>
 
               <a
-                className="hidden md:block"
+                className="hidden md:flex items-center justify-center text-sm"
                 href="https://weibo.com/jingdaily"
                 title="Read WeChat Articles"
                 target="_blank"

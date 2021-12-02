@@ -17,7 +17,7 @@ import { JingDaily } from "../svgs"
 const Footer = () => (
   <footer className="max-w-6xl mx-auto flex flex-col pt-24 md:pt-48 mb-8 md:mb-0 py-6">
     <nav className=" w-full flex flex-col-reverse md:flex-row flex-1 mx-auto justify-center md:justify-between items-center">
-    <span className="block text-left w-full md:hidden">
+    <span className="block text-center w-full md:hidden">
         {/* <JingDaily /> */}
         &copy; 2021
       </span>
@@ -98,7 +98,7 @@ const Footer = () => (
                 <li><a href="#" title="Instagram">Instagram</a></li>
             </ul> */}
     </nav>
-    <small className="uppercase mt-2">Jing Daily Modern Collectibles is a Trademark of Jing Daily.<br />Jing Daily offers resale of collectibles through consignment but is not otherwise affiliated with any featured brands</small>
+    <small className="uppercase mt-2 text-center md:text-left">Jing Daily Modern Collectibles is a Trademark of Jing Daily.<br />Jing Daily offers resale of collectibles through consignment but is not otherwise affiliated with any featured brands</small>
     {/* <nav className="text-xs grid grid-cols-5 gap-2 items-end mb-px">
             <a href="https://www.facebook.com/jingdaily/" title="Jing Daily Facebook"><FontAwesomeIcon icon={faFacebookF} /></a>
             <a href="weixin://dl/chat?Jing_Daily_China" title="Jing Daily WeChat"><FontAwesomeIcon icon={faWeixin} /></a>

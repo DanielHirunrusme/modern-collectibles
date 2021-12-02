@@ -114,6 +114,7 @@ const IndexPage = () => {
             ID
             Feature
             Collection
+            URL
             SVG {
               url
             }

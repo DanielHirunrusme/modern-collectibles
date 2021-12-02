@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-fontawesome-css`,
+    // `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
