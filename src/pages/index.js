@@ -155,7 +155,7 @@ const IndexPage = () => {
     </Section>
     <Section title="Catalogue">
       <Catalogue products={products} />
-      <div className="flex items-center justify-center my-24"><a href="https://www.sothebys.com/en/buy/fashion/streetwear" className="primary-button" target="_blank">Shop Full Collection at Sotheby’s</a></div>
+      <div className="flex items-center justify-center my-24"><a href="https://www.sothebys.com/en/buy/fashion/streetwear" className="primary-button" target="_blank">Shop Full Collection at Sotheby’s &rarr;</a></div>
     </Section>
     <Section title="Through Experts Eyes">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 max-w-6xl mx-auto">
@@ -186,7 +186,7 @@ const IndexPage = () => {
       <div className="grid grid-flow-row gap-8 max-w-6xl mx-auto">
         {posts.map((post)=><React.Fragment key={`further-reading-${post.id}`}><PostCard size="slim" post={post} /></React.Fragment>)}
       </div>
-      <div className="flex items-center justify-center my-24"><Link className="primary-button" to="/read">View All Articles</Link></div>
+      <div className="flex items-center justify-center my-24"><Link className="primary-button" to="/read">View All Articles &rarr;</Link></div>
 
     </Section>
   </Layout>

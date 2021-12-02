@@ -29,6 +29,14 @@
         @apply font-normal uppercase;
     }
 
+    a {
+        @apply underline;
+        text-decoration-thickness: 1px;
+        &:hover {
+            @apply bg-black text-white no-underline;
+        }
+    }
+
     //italic
 
     //unordered list

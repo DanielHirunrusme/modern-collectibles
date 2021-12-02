@@ -35,32 +35,38 @@ table.timeline {
   @apply mt-24 border-b border-black;
 
   .wp-caption {
-    @apply text-center mx-8;
+    @apply text-center md:mx-8;
   }
 
   tr {
-    @apply table-row;
+    @apply flex flex-col md:table-row;
     td {
-      @apply align-top w-1/2;
-      &:before {
-        content: '';
-        @apply mb-8 border-t border-black w-full sticky block;
-        top: 68px;
+      @apply align-top md:w-1/2;
+      @screen md {
+        &:before {
+          content: '';
+          @apply mb-8 border-t border-black w-full sticky block;
+          top: 68px;
+        }
       }
+      
       
     }
       td:nth-child(2) {
         // @apply border-r border-black;
-        @apply relative pb-16;
+        @apply relative pb-4 md:pb-16;
         & > * {
-          @apply ml-8 block;
+          @apply md:ml-8 md:inline-block;
         }
-        &:after {
-          content: '';
-          @apply border-r border-black absolute block left-0;
-          height: calc(100% - 2rem);
-          top: 1rem;
+        @screen md {
+          &:after {
+            content: '';
+            @apply border-r border-black absolute block left-0;
+            height: calc(100% - 2rem);
+            top: 1rem;
+          }
         }
+        
 
       }
     td:first-child {
@@ -77,13 +83,28 @@ table.timeline {
 
 // Shop table
 #Shop table {
+
+  td {
+    @apply pb-2 pt-3 mt-1 px-1 ;
+    box-shadow: 0 .5px 0 0 black;
+    @screen md {
+      box-shadow: none;
+      @apply border-b border-black;
+    }
+  }
+
+  tr:hover {
+    td {
+      @apply bg-black text-white;
+    }
+  }
     
 thead {
-    @apply bg-white sticky h-16;
-    top: 64.5px;
-    box-shadow: 0 -.5px 0 0 black; /* Border top */
+    @apply bg-white sticky h-16 px-1;
+    top: 64px;
+    box-shadow: 0 -1px 0 0 black; /* Border top */
     @screen md {
-      top: 68.5px;
+      top: 70px;
     }
 }
 
@@ -102,7 +123,7 @@ thead {
   th:nth-child(2),
   td:nth-child(2) {
     max-width: calc(100vw - 8rem);
-    overflow: hidden;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     @screen md {

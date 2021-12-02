@@ -42,7 +42,7 @@ const Post = ({ pageContext }) => {
               PUBLISHED<br />
               <div
                 dangerouslySetInnerHTML={{
-                  __html: post.date_gmt,
+                  __html: post.date,
                 }}
               ></div>
             </div>

@@ -34,7 +34,7 @@ const Header = () => {
                   <span className=" mr-2 md:mr-3">
                     <JingDaily />
                   </span>
-                  <span>Modern</span>&ensp;<span>Collectibles</span>
+                  <span>Modern</span>&ensp;<span>Collectibles &trade;</span>
                 </Link>
               </h1>
               <div className="hidden lg:block">
@@ -181,7 +181,7 @@ const Header = () => {
             <span className=" mr-2 md:mr-3">
               <JingDaily />
             </span>
-            <span>Modern</span>&ensp;<span>Collectibles</span>
+            <span>Modern</span>&ensp;<span>Collectibles &trade;</span>
           </div>
         </header>
       )}

@@ -5,7 +5,7 @@ const Hero = ({ title, subTitle, children }) => {
 
   return (
     <section className="hero">
-      <div className="hero-text flex justify-end flex-col text-center  -mx-4">
+      <div className="hero-text flex justify-end flex-col text-center max-w-7xl mx-auto">
       {title && <h1>{renderHTML(title)}</h1>} 
       {subTitle && <p className="mt-1 md:mt-6 text-sm lg:text-3xl">{subTitle}</p>}
       </div>

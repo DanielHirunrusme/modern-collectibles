@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'noMono', 'multiplyH1', 'IPAMincho', 'Mincho', "SimSun", "NSimSun", "SimSun-ExtB", "ST FangSong", "ST FangSong 2", "MSMincho", "PMingLiu", simsun, monospace, sans-serif !important;
+    font-family: 'noMono', 'multiplyH1', 'IPAMincho', 'Mincho', "SimSun", "NSimSun", "SimSun-ExtB", "LiSong Pro", "ST FangSong", "ST FangSong 2", "MSMincho", "PMingLiu", simsun, monospace, sans-serif !important;
     @apply md:text-xl;
     
 }
@@ -12,7 +12,7 @@ body {
         url('/IPAMincho.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
 }
 
 
@@ -37,7 +37,7 @@ body {
 
 @font-face {
     font-family: 'noMono';
-    src: local("Arial");
+    src: local("Times New Roman");
     unicode-range: U+0027, U+2019, U+02BC, U+00B4, U+2018, U+201D, U+201C;
 }
 

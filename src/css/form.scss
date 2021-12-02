@@ -3,10 +3,15 @@ form {
 }
 
 .form-wrapper {
-    @apply relative;
+    @apply relative border border-black;
 
     button {
         @apply absolute right-0 top-0 pr-4 h-full flex items-center;
+    }
+    
+
+    input:focus, input:active, input:focus + button, input:active + button {
+        @apply bg-black text-white;
     }
 }
 
@@ -17,7 +22,7 @@ form {
     }
 }
 
-.form-wrapper:hover {
+.form-wrapper:hover, .form-wrapper:active, .form-wrapper:focus {
     @apply bg-black text-white;
     input, button, input::placeholder {
         @apply bg-black text-white;
@@ -41,8 +46,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    color: #000 !important;
+    color: #fff !important;
     -webkit-text-fill-color: white;
-    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
     transition: background-color 500000s ease-in-out 0s;
 }

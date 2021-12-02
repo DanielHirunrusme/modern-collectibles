@@ -74,7 +74,7 @@ const ShopPage = ({ data }) => {
       <Seo title="Shop" />
       <div id="Shop" className="pt-20 max-w-6xl mx-auto">
         <div className="mb-4">
-          <h1 className="text-base md:text-xl lg:text-3xl text-center ">
+          <h1 className="text-xl lg:text-3xl text-center ">
             The Louis Vuitton×Supreme Collection
           </h1>
           {/* <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et.</p> */}
