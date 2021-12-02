@@ -1,5 +1,5 @@
 .primary-button {
-    @apply inline-block mx-auto border border-black p-4 text-center hover:bg-black hover:text-white;
+    @apply text-sm md:text-xl inline-block mx-auto border border-black p-4 text-center hover:bg-black hover:text-white;
 }
 
 .default-button {
