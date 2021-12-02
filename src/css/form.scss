@@ -15,7 +15,13 @@ form {
     label {
         @apply absolute left-0 top-0 cursor-pointer p-4 md:text-6xl;
     }
-    
+}
+
+.form-wrapper:hover {
+    @apply bg-black text-white;
+    input, button, input::placeholder {
+        @apply bg-black text-white;
+    }
 }
 
 input {

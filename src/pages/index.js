@@ -29,19 +29,31 @@ import Trunk from "../../static/trunk.svg"
 import Wallet from "../../static/wallet.svg"
 
 const author1 = {
-  name: "Michael Lau"
+  name: "Sarah Andelman",
+  image: "../../images/LVS_Experts_Sarah.png",
+  pick: "Mickey×Damien Hirst×Swatch",
+  description: `"It’s so difficult to just pick one. I think of the recent one like Supreme x Tiffany, I think of old ones like Hello Kitty x Playboy, or KAWS x CDG during Colette. I think of the ones I helped with my new company like APC x Sacai or Undercover x Valentino. I'd also like to mention the Café de Flore x Highsnobiety which I worked on. But in the end, I’ll pick Mickey x Damien Hirst x Swatch. In my eyes, it means "everything is possible. There's no more limit on how any brand or any artist can collaborate together. Now, people get it and want this kind of crossover. But I also appreciate the union of three icons: iconic character, iconic brand, iconic artist. And the result is a perfect balance of all this creativity."`
 }
 
 const author2 = {
-  name: "Sarah Andelman"
+  name: "Michael Lau",
+  pick: "Nike SB×Michael Lau",
+  image: "/images/LVS_Experts_Michael.jpg",
+  description: `“It was my last collaboration with Sandy, the founder of the Nike Skateboarding division and a close friend of mine, who passed away in 2018. I always had a strong connection to the skateboarding community, so from this collaboration, where proceeds went to support the community in China in memory of Sandy, was especially meaningful. The China-exclusive shoes also commemorated my exhibition at Christie’s Shanghai. Over the past five years, I’ve been going back to my roots of painting and these shoes, to me, are a symbol of how artists like myself, who are born more from a street culture background not from the traditional academic background of the art world, are making waves and challenging convention.”`
 }
 
 const author3 = {
-  name: "Hanan Besovic"
+  name: "Hanan Besovic",
+  pick: "Gucci×Balenciaga FW/2021",
+  image: "src/images/LVS_Experts_Hannan.jpg",
+  description: `“I cannot refer to it as a collaboration, since it technically is not one: the “Gucciaga” a.k.a. Gucci and Balenciaga hack. For the 100th anniversary of Gucci, the creative director Alessandro Michele decided to present a collection with a different approach to Gucci. Michele, who has been in the house of Gucci since 2016, decided to use the silhouettes and codes from Demna Gvasalia’s work in Balenciaga. The brand is Gucci but the collection has that Balenciaga feel to it. For two houses that historically don’t have a lot in common, aesthetically the collection worked perfectly. On top of it all, what made it so impactful was the show itself. No-one knew what to expect but we were given one of those fashion moments that everyone was talking about for a while and that rarely happens now.”`
 }
 
 const author4 = {
-  name: "Iolo Edwards"
+  name: "Iolo Edwards",
+  image: "images/LVS_Experts_Iolo.jpg",
+  pick: "A-Cold-Wall×Dr Martens 2021",
+  description: `“A-Cold-Wall previously collaborated with Nike, which is part of the same group as Dr Martens, however it had been a while since they released anything. During that break, A-Cold-Wall evolved and so had their customer. So, a pair of Nike collabs, though they’re always a staple in their wardrobes, wasn’t all that we wanted. Instead, Dr Martens was a natural evolution. It also happened to be Dr Martens’ 50 year anniversary for which they did a number of collaborations throughout the year with high-profile brands and entities; they were all pretty cool, but from just looking at them you can tell that A-Cold-Wall's creative director Samuel Ross stuck to his guns in terms of the development he wanted to give his customers, which is one of the most important elements of collaborating in the fashion world these days.”`
 }
 
 const getSVG = () => {
@@ -158,10 +170,10 @@ const IndexPage = () => {
           <Link to="/subscribe">SUBSCRIBE TO NEWSLETTER</Link>
         </div>
         <div className="grid grid-cols-2 gap-8 uppercase text-center md:-mt-3">
-          <Popup content={`"It’s so difficult to just pick one. I think of the recent one like Supreme x Tiffany, I think of old ones like Hello Kitty x Playboy, or KAWS x CDG during Colette. I think of the ones I helped with my new company like APC x Sacai or Undercover x Valentino. I'd also like to mention the Café de Flore x Highsnobiety which I worked on. But in the end, I’ll pick Mickey x Damien Hirst x Swatch. In my eyes, it means "everything is possible. There's no more limit on how any brand or any artist can collaborate together. Now, people get it and want this kind of crossover. But I also appreciate the union of three icons: iconic character, iconic brand, iconic artist. And the result is a perfect balance of all this creativity."`}><AuthorCard author={author1} /></Popup>
-          <AuthorCard author={author2} />
-          <AuthorCard author={author3} />
-          <AuthorCard author={author4} />
+          <Popup content={author1.description}><AuthorCard author={author1} num={1} /></Popup>
+          <Popup content={author2.description}><AuthorCard author={author2} num={2} /></Popup>
+          <Popup content={author3.description}><AuthorCard author={author3} num={3} /></Popup>
+          <Popup content={author4.description}><AuthorCard author={author4} num={4} /></Popup>
         </div>
       </div>
     </Section>

@@ -21,7 +21,7 @@ const PostCard = ({ size, post, featured }) => {
       </Link>}
     </article>
     :
-    <article className="border p-4 border-black">
+    <article className="border p-4 border-black hover:bg-black hover:text-white">
       {slug && <a href={`http://jingdaily.com/${slug}`} target="_blank"><div className="flex justify-between flex-col">
         <div className="sm:grid grid-cols-12 gap-8 ">
           {title && <h4 className="md:text-3xl col-span-4 mb-8 sm:mb-0"  dangerouslySetInnerHTML={{__html: title }} />}
