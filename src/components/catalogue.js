@@ -2,6 +2,7 @@ import React, {useState, useRef} from "react"
 import { Link } from "gatsby"
 import { ProductCard, Popup } from "./"
 import Slider from "react-slick"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 // 1. Get products
 // 2. Show schematics in main productshow
@@ -144,9 +145,9 @@ const Catalogue = ({ products }) => {
                     <Popup product={product}>View</Popup>
                     </div>
                   
-                  <a href={product.URL} target="_blank" className="text-center w-1/2 justify-center flex items-center hover:bg-black hover:text-white">
+                  <OutboundLink href={product.URL} target="_blank" className="text-center w-1/2 justify-center flex items-center hover:bg-black hover:text-white">
                     Buy
-                  </a>
+                  </OutboundLink>
                 </div>
               </div>
               {/* <div className="mt-2">{product.Title}<br/>${product.Price}</div> */}

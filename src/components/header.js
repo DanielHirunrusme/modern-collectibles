@@ -14,6 +14,8 @@ import {
   faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -46,14 +48,14 @@ const Header = () => {
                 <Link to="/about">About</Link>
               </nav>
 
-              <a
+              <OutboundLink 
                 className="hidden md:flex items-center justify-center text-sm"
                 href="https://weibo.com/jingdaily"
                 title="Read WeChat Articles"
                 target="_blank"
               >
                 微信
-              </a>
+              </OutboundLink>
               <button className="block md:hidden" onClick={toggleMenu}>
                 <svg
                   width="24"
@@ -145,36 +147,36 @@ const Header = () => {
               <Newsletter />
             </div>
             <nav className="grid grid-cols-8 gap-3 items-center text-base">
-              <a
+              <OutboundLink 
                 href="https://www.facebook.com/jingdaily/"
                 title="Jing Daily Facebook"
               >
                 <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-              <a
+              </OutboundLink>
+              <OutboundLink 
                 href="weixin://dl/chat?Jing_Daily_China"
                 title="Jing Daily WeChat"
               >
                 <FontAwesomeIcon icon={faWeixin} />
-              </a>
-              <a
+              </OutboundLink>
+              <OutboundLink 
                 href="https://twitter.com/JingDaily"
                 title="Jing Daily Twitter"
               >
                 <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a
+              </OutboundLink>
+              <OutboundLink 
                 href="https://www.linkedin.com/company/jing-daily"
                 title="Jing Daily LinkedIm"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-              <a
+              </OutboundLink>
+              <OutboundLink 
                 href="https://www.instagram.com/jingdaily/"
                 title="Jing Daily Instagram"
               >
                 <FontAwesomeIcon icon={faInstagram} />
-              </a>
+              </OutboundLink>
             </nav>
           </div>
           <div className="mx-8 mb-5 flex uppercase items-center">

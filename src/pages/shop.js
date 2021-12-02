@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { Layout, Seo, Table } from "../components/index"
-
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 /* 
   Renders a shop table via Airtable
 */
@@ -16,11 +16,11 @@ const ShopPage = ({ data }) => {
     () => [
       {
         Header: "ID",
-        accessor: row => <p>{row.URL ? <a target="_blank" className="block" href={row.URL}>{row.ID}</a> : <>{row.ID}</>}</p>,
+        accessor: row => <p>{row.URL ? <OutboundLink  target="_blank" className="block" href={row.URL}>{row.ID}</OutboundLink> : <>{row.ID}</>}</p>,
       },
       {
         Header: "Title",
-        accessor: row => <p className="truncate">{row.URL ? <a target="_blank" className="block" href={row.URL}>{row.Title}</a> : <>{row.Title}</>}</p>,
+        accessor: row => <p className="truncate">{row.URL ? <OutboundLink  target="_blank" className="block" href={row.URL}>{row.Title}</OutboundLink> : <>{row.Title}</>}</p>,
       },
       // {
       //   Header: "Collection",
@@ -36,7 +36,7 @@ const ShopPage = ({ data }) => {
           return (
             <div className="text-right md:text-left">
               {row.Status === "Available" ? (
-                <p>{row.URL ? <a className="block" target="_blank" href={row.URL}>${row.Price}</a> : <>${row.Price}</>}</p>
+                <p>{row.URL ? <OutboundLink  className="block" target="_blank" href={row.URL}>${row.Price}</OutboundLink> : <>${row.Price}</>}</p>
               ) : (
                 <s className="text-right block md:text-left">${row.Price}</s>
               )}
@@ -51,12 +51,12 @@ const ShopPage = ({ data }) => {
             {row.Status === "Available" ? (
               <>
                 {row.URL ? (
-                  <a className="group" href={row.URL} target="_blank" title="Purchase">
+                  <OutboundLink  className="group" href={row.URL} target="_blank" title="Purchase">
                     {/* <span className="group-hover:hidden">I</span> */}
                     <span className="block">Purchase</span>
-                  </a>
+                  </OutboundLink>
                 ) : (
-                  <a href="mailto:daphne@jingdaily.com" target="_blank" title="Inquire">Inquire</a>
+                  <OutboundLink  href="mailto:daphne@jingdaily.com" target="_blank" title="Inquire">Inquire</OutboundLink>
                 )}
               </>
             ) : (

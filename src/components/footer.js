@@ -13,6 +13,7 @@ import {
   faWeibo
 } from "@fortawesome/free-brands-svg-icons"
 import { JingDaily } from "../svgs"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const Footer = () => (
   <footer className="max-w-6xl mx-auto flex flex-col pt-24 md:pt-48 mb-8 md:mb-0 py-6">
@@ -28,24 +29,24 @@ const Footer = () => (
       </span></li>
       <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3 hidden lg:block">
-          <a
+          <OutboundLink
             href="https://jingculturecommerce.com/"
             title="Jing Culture and Commerice"
             className="whitespace-nowrap"
             target="_blank"
           >
             Culture &amp; Commerce
-          </a>
+          </OutboundLink>
         </li>
         <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3 hidden lg:block">
-          <a href="https://jingdaily.com" title="Jing Daily" target="_blank">
+          <OutboundLink href="https://jingdaily.com" title="Jing Daily" target="_blank">
             Jing Daily
-          </a>
+          </OutboundLink>
         </li>
         <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3">
-          <a href="https://jingdaily.com/advertise/" target="_blank">Advertise</a>
+          <OutboundLink href="https://jingdaily.com/advertise/" target="_blank">Advertise</OutboundLink>
         </li>
         <li className="mr-3 hidden md:block">|</li>
         <li className="mr-3">
@@ -53,36 +54,36 @@ const Footer = () => (
         </li>
       </ul>
       <nav className="hidden md:grid grid-cols-6 gap-3 items-center text-xs">
-        <a
+        <OutboundLink
           href="https://www.facebook.com/jingdaily/"
           title="Jing Daily Facebook"
         >
           <FontAwesomeIcon icon={faFacebookF} />
-        </a>
-        <a href="weixin://dl/chat?Jing_Daily_China" title="Jing Daily WeChat">
+        </OutboundLink>
+        <OutboundLink href="weixin://dl/chat?Jing_Daily_China" title="Jing Daily WeChat">
           <FontAwesomeIcon icon={faWeixin} />
-        </a>
-        <a href="https://twitter.com/JingDaily" title="Jing Daily Twitter">
+        </OutboundLink>
+        <OutboundLink href="https://twitter.com/JingDaily" title="Jing Daily Twitter">
           <FontAwesomeIcon icon={faTwitter} />
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href="https://www.linkedin.com/company/jing-daily"
           title="Jing Daily LinkedIm"
         >
           <FontAwesomeIcon icon={faLinkedinIn} />
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href="https://www.instagram.com/jingdaily/"
           title="Jing Daily Instagram"
         >
           <FontAwesomeIcon icon={faInstagram} />
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href="https://weibo.com/jingdaily"
           title="Jing Daily Weibo" 
         >
           <FontAwesomeIcon icon={faWeibo} />
-        </a>
+        </OutboundLink>
       </nav>
 
       {/* <ul className="flex">

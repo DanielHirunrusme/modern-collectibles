@@ -27,6 +27,8 @@ import Shoe from "../../static/shoe.svg"
 import Skateboard from "../../static/skateboard.svg"
 import Trunk from "../../static/trunk.svg"
 import Wallet from "../../static/wallet.svg"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
+
 
 const author1 = {
   name: "Sarah Andelman",
@@ -167,7 +169,7 @@ const IndexPage = () => {
     </Section>
     <Section title="Catalogue">
       <Catalogue products={products} />
-      <div className="flex items-center justify-center my-24"><a href="https://www.sothebys.com/en/buy/fashion/streetwear" className="primary-button" target="_blank">Shop Full Collection at Sotheby’s &rarr;</a></div>
+      <div className="flex items-center justify-center my-24"><OutboundLink href="https://www.sothebys.com/en/buy/fashion/streetwear" className="primary-button" target="_blank">Shop Full Collection at Sotheby’s &rarr;</OutboundLink></div>
     </Section>
     <Section title="Through Experts Eyes">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 max-w-6xl mx-auto">
