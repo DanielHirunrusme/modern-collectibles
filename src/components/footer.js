@@ -10,18 +10,22 @@ import {
   faTwitter,
   faLinkedin,
   faInstagram,
+  faWeibo
 } from "@fortawesome/free-brands-svg-icons"
 import { JingDaily } from "../svgs"
 
 const Footer = () => (
   <footer className="max-w-6xl mx-auto flex flex-col pt-24 md:pt-48 mb-8 md:mb-0 py-6">
     <nav className=" w-full flex flex-col-reverse md:flex-row flex-1 mx-auto justify-center md:justify-between items-center">
-      
-      <ul className="hidden list-nav md:flex flex-col md:flex-row items-center">
-        <li><a className="mr-3  flex">
+    <span className="block text-left w-full md:hidden">
         {/* <JingDaily /> */}
         &copy; 2021
-      </a></li>
+      </span>
+      <ul className="hidden list-nav md:flex flex-col md:flex-row items-center">
+        <li><span className="mr-3  flex">
+        {/* <JingDaily /> */}
+        &copy; 2021
+      </span></li>
       <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3 hidden lg:block">
           <a
@@ -48,7 +52,7 @@ const Footer = () => (
           <Link to="/about#contact">Contact</Link>
         </li>
       </ul>
-      <nav className="hidden md:grid grid-cols-5 gap-3 items-center text-base">
+      <nav className="hidden md:grid grid-cols-6 gap-3 items-center text-xs">
         <a
           href="https://www.facebook.com/jingdaily/"
           title="Jing Daily Facebook"
@@ -72,6 +76,12 @@ const Footer = () => (
           title="Jing Daily Instagram"
         >
           <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        <a
+          href="https://weibo.com/jingdaily"
+          title="Jing Daily Weibo" 
+        >
+          <FontAwesomeIcon icon={faWeibo} />
         </a>
       </nav>
 

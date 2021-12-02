@@ -85,6 +85,10 @@
         tr {
             @apply grid md:grid-flow-col gap-4;
         }
+
+        blockquote {
+            @apply text-3xl;
+        }
     }
 
     //border table

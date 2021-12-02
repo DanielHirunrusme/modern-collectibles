@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import ReactDOM from "react-dom"
 import Modal from "styled-react-modal"
 
-const Popup = ({ children, content, product }) => {
+const Popup = ({ children, headline, content, product }) => {
   console.log({product})
   const StyledModal = Modal.styled`
   width: 100%;
@@ -61,6 +61,7 @@ const Popup = ({ children, content, product }) => {
           </svg>
         </button>
         {!product ? <div className="text-sm">
+          {headline && <h5 className="m-8">{headline}</h5>}
           <div className="m-8">{content}</div>
         </div> :
         <div className="">

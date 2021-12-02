@@ -79,7 +79,19 @@ const IndexPage = () => {
         }
       }
     }
-    posts: allApiPost(filter: {id: {in: ["127308", "127309", "127310"]}}) {
+    posts: allApiPost(filter: {id: {in: ["127307", "127308", "127309", "127310"]}}) {
+      edges {
+        node {
+          title
+          id
+          excerpt
+          featured_media
+          slug
+          author
+        }
+      }
+    }
+    all: allApiPost(filter: {id: {nin: ["127307", "127308", "127309", "127310"]}}) {
       edges {
         node {
           title
@@ -127,8 +139,7 @@ const IndexPage = () => {
   const products = data.products?.edges?.map(({node})=> node.data);
   const featured = data.featured?.edges?.map(({node})=>node)
   const posts = data.posts?.edges?.map(({node})=> node);
-
-  console.log({products});
+  const all = data.all?.edges?.map(({node})=> node);
   
   return (
     <ModalProvider>
@@ -172,10 +183,10 @@ const IndexPage = () => {
           <a href="#Newsletter">SUBSCRIBE TO NEWSLETTER</a>
         </div>
         <div className="grid grid-cols-2 gap-8 uppercase text-center md:-mt-3">
-          <Popup content={author1.description}><AuthorCard author={author1} num={1} /></Popup>
-          <Popup content={author2.description}><AuthorCard author={author2} num={2} /></Popup>
-          <Popup content={author3.description}><AuthorCard author={author3} num={3} /></Popup>
-          <Popup content={author4.description}><AuthorCard author={author4} num={4} /></Popup>
+          <Popup headline={author1.pick} content={author1.description}><AuthorCard author={author1} num={1} /></Popup>
+          <Popup headline={author2.pick} content={author2.description}><AuthorCard author={author2} num={2} /></Popup>
+          <Popup headline={author3.pick} content={author3.description}><AuthorCard author={author3} num={3} /></Popup>
+          <Popup headline={author4.pick} content={author4.description}><AuthorCard author={author4} num={4} /></Popup>
         </div>
       </div>
     </Section>
@@ -184,7 +195,7 @@ const IndexPage = () => {
     </Section>
     <Section title="Further Readings">
       <div className="grid grid-flow-row gap-8 max-w-6xl mx-auto">
-        {posts.map((post)=><React.Fragment key={`further-reading-${post.id}`}><PostCard size="slim" post={post} /></React.Fragment>)}
+        {all.map((post)=><React.Fragment key={`further-reading-${post.id}`}><PostCard size="slim" post={post} /></React.Fragment>)}
       </div>
       <div className="flex items-center justify-center my-24"><Link className="primary-button" to="/read">View All Articles &rarr;</Link></div>
 

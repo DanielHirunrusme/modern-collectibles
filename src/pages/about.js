@@ -10,6 +10,7 @@ import {
   faTwitter,
   faLinkedin,
   faInstagram,
+  faWeibo
 } from "@fortawesome/free-brands-svg-icons"
 const AboutPage = () => {
   return (
@@ -94,7 +95,7 @@ const AboutPage = () => {
           </div>
         </Section>
         <Section title="Social">
-          <nav className="max-w-6xl mx-auto grid grid-cols-5 gap-3 items-center text-base">
+          <nav className="max-w-6xl mx-auto grid grid-cols-3 md:grid-cols-6 gap-3 items-center text-base">
             <a
               href="https://www.facebook.com/jingdaily/"
               title="Jing Daily Facebook"
@@ -144,6 +145,16 @@ const AboutPage = () => {
                 <FontAwesomeIcon icon={faInstagram} />
               </div>
             </a>
+            <a
+          href="https://weibo.com/jingdaily"
+          title="Jing Daily Weibo" 
+          className="aspect-w-1 aspect-h-1 default-button border border-black"
+
+        >
+          <div className=" items-center justify-center text-center flex">
+          <FontAwesomeIcon icon={faWeibo} />
+          </div>
+        </a>
           </nav>
         </Section>
         <Section title="Team">
