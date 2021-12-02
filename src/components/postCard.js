@@ -24,7 +24,7 @@ const PostCard = ({ size, post, featured }) => {
     <article className="border p-4 border-black hover:bg-black hover:text-white group">
       {slug && <a href={`http://jingdaily.com/${slug}`} target="_blank"><div className="flex justify-between flex-col">
         <div className="sm:grid grid-cols-12 gap-8 ">
-          {title && <h4 className="md:text-3xl col-span-4 mb-8 sm:mb-0 border-r border-black group-hover:border-white"  dangerouslySetInnerHTML={{__html: title }} />}
+          {title && <h4 className="md:text-3xl col-span-4 mb-8 pb-8 md:pb-0 sm:mb-0 border-b md:border-r border-black group-hover:border-white"  dangerouslySetInnerHTML={{__html: title }} />}
           {excerpt && <div className=" col-span-8 text-sm md:text-xl" dangerouslySetInnerHTML={{__html: excerpt }} />}
         </div>
         {/* {author && <div className="">{author}</div>} */}
