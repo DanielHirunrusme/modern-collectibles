@@ -71,7 +71,7 @@ const ShopPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Shop" />
+      <Seo title="Shop" description="Shop the Louis Vuitton×Supreme Collection. Presented by Jing Daily in partnership with Sotheby's." />
       <div id="Shop" className="pt-20 max-w-6xl mx-auto">
         <div className="mb-4">
           <h1 className="text-xl lg:text-3xl text-center ">
