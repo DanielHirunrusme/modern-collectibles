@@ -13,7 +13,7 @@ const Post = ({ pageContext }) => {
   console.log(post)
   return (
     <Layout>
-      <Seo title={post.title?.rendered} description={post.excerpt?.rendered} image={post._embedded["wp:featuredmedia"][0]?.source_url} />
+      <Seo title={post.title?.rendered} description={post.excerpt?.rendered} image={post._embedded["wp:featuredmedia"][0]?.media_details?.sizes["post-thumbnail-1240"]?.source_url} />
       <div>
         {/* <div className="bg-black h-screen w-full sticky top-0" style={{ mixBlendMode: "difference"}}></div> */}
         <Hero title={post.title?.rendered}>

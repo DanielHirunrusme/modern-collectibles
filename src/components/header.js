@@ -64,7 +64,7 @@ const Header = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_694_18832)">
+                  <g clipPath="url(#clip0_694_18832)">
                     <rect width="24" height="24" fill="white" />
                     <line
                       x1="-2.18557e-08"
@@ -72,7 +72,7 @@ const Header = () => {
                       x2="24"
                       y2="3.92653"
                       stroke="black"
-                      stroke-width="0.5"
+                      strokeWidth="0.5"
                     />
                     <line
                       x1="-2.18557e-08"
@@ -80,7 +80,7 @@ const Header = () => {
                       x2="24"
                       y2="11.75"
                       stroke="black"
-                      stroke-width="0.5"
+                      strokeWidth="0.5"
                     />
                     <line
                       x1="-2.18557e-08"
@@ -88,7 +88,7 @@ const Header = () => {
                       x2="24"
                       y2="19.573"
                       stroke="black"
-                      stroke-width="0.5"
+                      strokeWidth="0.5"
                     />
                   </g>
                   <defs>
@@ -122,7 +122,7 @@ const Header = () => {
                   x2="20.3085"
                   y2="3.33794"
                   stroke="black"
-                  stroke-width="0.5"
+                  strokeWidth="0.5"
                 />
                 <line
                   x1="3.69149"
@@ -130,7 +130,7 @@ const Header = () => {
                   x2="20.662"
                   y2="20.3085"
                   stroke="black"
-                  stroke-width="0.5"
+                  strokeWidth="0.5"
                 />
               </svg>
             </button>

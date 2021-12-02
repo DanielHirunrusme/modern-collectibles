@@ -63,7 +63,7 @@ const Catalogue = ({ products }) => {
             xmlns="http://www.w3.org/2000/svg"
             className="arrow"
           >
-            <g clip-path="url(#clip0_711_1829)">
+            <g clipPath="url(#clip0_711_1829)">
               <path
                 d="M34.3851 43.7765L8.36703 24L34.3851 4.22349L34.3851 43.7765Z"
                 stroke="black"
@@ -88,7 +88,7 @@ const Catalogue = ({ products }) => {
             xmlns="http://www.w3.org/2000/svg"
             className="arrow"
           >
-            <g clip-path="url(#clip0_711_1829)">
+            <g clipPath="url(#clip0_711_1829)">
               <path
                 d="M17.1557 4.22349L43.1737 24L17.1557 43.7765L17.1557 4.22349Z"
                 stroke="black"

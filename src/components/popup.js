@@ -49,7 +49,7 @@ const Popup = ({ children, headline, content, product }) => {
               x2="20.3085"
               y2="3.33794"
               stroke="black"
-              stroke-width="0.5"
+              strokeWidth="0.5"
             />
             <line
               x1="3.69149"
@@ -57,7 +57,7 @@ const Popup = ({ children, headline, content, product }) => {
               x2="20.662"
               y2="20.3085"
               stroke="black"
-              stroke-width="0.5"
+              strokeWidth="0.5"
             />
           </svg>
         </button>
