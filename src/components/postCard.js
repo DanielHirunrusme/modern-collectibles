@@ -4,7 +4,6 @@ import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const PostCard = ({ size, post, featured }) => {
   const { title, excerpt, author, featured_media, slug } = post;
-  console.log(featured)
   return (
     <>
     {size !== "slim" ?

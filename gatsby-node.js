@@ -37,11 +37,23 @@ const crypto = require("crypto")
 exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions
 
+  async function safeParseJSON(response) {
+    const body = await response.text();
+    try {
+        return JSON.parse(body);
+    } catch (err) {
+        console.error("Error:", err);
+        console.error("Response body:", body);
+        // throw err;
+        return ReE(response, err.message, 500)
+    }
+}
+
   const allPosts = await (
     await fetch(
-      "https://jingdaily.com/wp-json/wp/v2/posts?tags=17457&_embed"
-    )
-  ).json()
+      "https://jingdaily.com/wp-json/wp/v2/posts?tags=17457&_embed",
+    ).then(safeParseJSON)
+  )
 
   console.log(allPosts);
 

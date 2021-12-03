@@ -5,7 +5,6 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const AuthorCard = ({ size, author, num }) => {
   const { name, description, image, pick } = author
-  console.log(image)
 
   const getImage = num => {
     switch (num) {

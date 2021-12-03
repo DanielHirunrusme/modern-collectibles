@@ -4,7 +4,6 @@ import Modal from "styled-react-modal"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const Popup = ({ children, headline, content, product }) => {
-  console.log({product})
   const StyledModal = Modal.styled`
   width: 100%;
   max-width: 20rem;
