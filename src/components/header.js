@@ -50,7 +50,7 @@ const Header = () => {
 
               <OutboundLink 
                 className="hidden md:flex items-center justify-center text-sm"
-                href="https://weibo.com/jingdaily"
+                href="weixin://dl/chat?Jing_Daily_China"
                 title="Read WeChat Articles"
                 target="_blank"
               >

@@ -2,12 +2,13 @@ module.exports = {
   siteMetadata: {
     title: `Modern Collectibles`,
     description: `Jing Daily | Modern Collectibles`,
-    author: `@danielhirunrusme`,
-    siteUrl: `https://moderncollectibles.gatsbyjs.io/`,
+    author: `@jingdaily`,
+    siteUrl: `https://moderncollectibles.jingdaily.com`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
