@@ -23,8 +23,11 @@ table {
 table.border {
   border-collapse: separate;
   &.condensed {
-    padding: .25rem;
-    @apply md:p-4;
+    td {
+      padding: .25rem;
+      @apply md:p-4;
+    }
+    
   }
     tr {
         @apply table-row
