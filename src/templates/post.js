@@ -53,9 +53,9 @@ const Post = ({ pageContext }) => {
           ></div>
 
           <div className="max-w-6xl mx-auto my-16 md:my-32">
-            <ul className="list-nav flex flex-col md:flex-row">
-              <li className="mr-4">SHARE:</li>
-              <li className="mr-4">
+            <ul className="list-nav flex flex-col md:flex-row group">
+              <li className="mr-3">SHARE:</li>
+              <li className="mr-3">
                 <EmailShareButton
                   subject={post.title?.rendered}
                   body=""
@@ -65,10 +65,13 @@ const Post = ({ pageContext }) => {
                   Email
                 </EmailShareButton>
               </li>
-              <li className="mr-4">
+              <li className="hidden md:block mr-3">|</li>
+              <li className="mr-3">
                 <FacebookShareButton quote="">Facebook</FacebookShareButton>
               </li>
-              <li className="mr-4">
+              <li className="hidden md:block mr-3">|</li>
+
+              <li className="mr-3">
                 <LinkedinShareButton
                   title={post.title?.rendered}
                   summary=""
@@ -78,7 +81,9 @@ const Post = ({ pageContext }) => {
                   LinkedIn
                 </LinkedinShareButton>
               </li>
-              <li className="mr-4">
+              <li className="hidden md:block mr-3">|</li>
+
+              <li className="mr-3">
                 <TwitterShareButton
                   title={post.title?.rendered}
                   via="jingdaily"
@@ -87,7 +92,9 @@ const Post = ({ pageContext }) => {
                   Twitter
                 </TwitterShareButton>
               </li>
-              <li className="mr-4">
+              <li className="hidden md:block mr-3">|</li>
+
+              <li className="mr-3">
                 <WhatsappShareButton
                   title={post.title?.rendered}
                   url={`https://moderncollectibles.gatsbyjs.io/read/${post.slug}`}

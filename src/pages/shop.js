@@ -87,7 +87,7 @@ const ShopPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allAirtable {
+    allAirtable(filter: {table: {eq: "Shop"}}) {
       edges {
         node {
           data {

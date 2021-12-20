@@ -68,6 +68,16 @@ module.exports = {
               Status:"",
               Attachments: []
             },
+          },
+          {
+            baseId: "appgyq7KRpuJ54mAP",
+            tableName: "Experts",
+            defaultValues: {
+              Name:"",
+              Bio:"",
+              Collectible:"",
+              Portrait: []
+            },
           }
         ]
       }

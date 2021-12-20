@@ -36,26 +36,28 @@ const Header = () => {
                   <span className=" mr-2 md:mr-3">
                     <JingDaily />
                   </span>
-                  <span>Modern</span>&ensp;<span>Collectibles &trade;</span>
+                  <span>Modern</span>&ensp;<span>Collectibles&thinsp;&trade;</span>
                 </Link>
               </h1>
-              <div className="hidden lg:block">
+              {/* <div className="hidden lg:block">
                 <Link to="/shop">LV×Supreme, 2017</Link>
-              </div>
+              </div> */}
               <nav className="list-nav grid-flow-col gap-4 hidden md:grid">
                 <Link to="/shop">Shop</Link>
                 <Link to="/read">Read</Link>
                 <Link to="/about">About</Link>
-              </nav>
-
-              <OutboundLink 
-                className="hidden md:flex items-center justify-center text-sm"
+                <div className="mx-0">|</div>
+                <OutboundLink 
+                className="hidden md:flex items-center justify-center"
                 href="weixin://dl/chat?Jing_Daily_China"
                 title="Read WeChat Articles"
                 target="_blank"
               >
                 微信
               </OutboundLink>
+              </nav>
+
+             
               <button className="block md:hidden" onClick={toggleMenu}>
                 <svg
                   width="24"

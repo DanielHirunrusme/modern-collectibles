@@ -24,3 +24,23 @@ export const Shop = `{
       }
     }
   }`
+
+
+  export const Experts = `{
+    allAirtable(
+      filter: {
+        table: { eq: "Experts" }
+      }
+    ) {
+      edges {
+        node {
+          data {
+              Name
+              Bio
+              Portrait
+              Collectible
+          }
+        }
+      }
+    }
+  }`

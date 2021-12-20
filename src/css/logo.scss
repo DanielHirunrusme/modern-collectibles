@@ -1,0 +1,97 @@
+.logo-container {
+    @apply w-full flex justify-center items-center top-0 left-0;
+}
+
+.modern-collectibles {
+  cursor: pointer;
+  fill: #1f1f1f;
+  width: 100%;
+  margin: 0 1rem;
+  @apply max-w-4xl mt-4;
+  .mask {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+  }
+}
+
+@keyframes strokeOffset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#m-mask {
+  animation: strokeOffset 0.5s linear forwards;
+}
+#o-mask {
+  animation: strokeOffset 0.25s linear forwards 0.5s;
+}
+#d-mask {
+  animation: strokeOffset 0.25s linear forwards 0.75s;
+}
+#e-mask {
+  animation: strokeOffset 0.25s linear forwards 1s;
+}
+#r-mask {
+  animation: strokeOffset 0.25s linear forwards 1.25s;
+}
+#n-mask {
+  animation: strokeOffset 0.5s linear forwards 1.75s;
+}
+#c-mask {
+  animation: strokeOffset 0.5s linear forwards 2.25s;
+}
+#co-mask {
+  animation: strokeOffset 0.25s linear forwards 2.75s;
+}
+#l1-mask {
+  animation: strokeOffset 0.15s linear forwards 3s;
+}
+#l2-mask {
+  animation: strokeOffset 0.15s linear forwards 3.15s;
+}
+#ce1-mask {
+  animation: strokeOffset 0.25s linear forwards 3.35s;
+}
+#cc-mask {
+  animation: strokeOffset 0.25s linear forwards 3.6s;
+}
+#t-mask {
+  animation: strokeOffset 0.5s linear forwards 3.85s;
+}
+#i-mask {
+  animation: strokeOffset 0.15s linear forwards 4.35s;
+}
+#b-mask {
+  animation: strokeOffset 0.5s linear forwards 4.45s;
+}
+#l3-mask {
+  animation: strokeOffset 0.15s linear forwards 4.95s;
+}
+#ce2-mask {
+  animation: strokeOffset 0.25s linear forwards 5.1s;
+}
+#s-mask {
+  animation: strokeOffset 0.5s linear forwards 5.35s;
+}
+
+.cls-1,
+.cls-2,
+.cls-3 {
+  fill: none;
+  stroke: #000;
+  stroke-linejoin: round;
+}
+
+.cls-1 {
+  stroke-width: 27px;
+}
+
+.cls-2 {
+  stroke-width: 22px;
+}
+
+.cls-3 {
+  stroke-width: 36px;
+}

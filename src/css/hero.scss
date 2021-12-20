@@ -1,16 +1,25 @@
 .hero {
-    min-height: 400px;
+  min-height: 400px;
 
-    @screen md {
-        min-height: 100vh;
-    }
+  @screen md {
+    min-height: 100vh;
+  }
 }
 
 .hero-text {
-    height: 50vh;
-    max-height: 200px;
-    @screen md {
-        max-height: 500px;
+  height: 50vh;
+  max-height: 200px;
+  @screen md {
+    max-height: 500px;
+  }
+}
 
+.jing-hero {
+  .jing-hero-logo {
+    svg {
+      @apply relative;
+      width: 30vw;
+      max-width: 16rem;
     }
+  }
 }

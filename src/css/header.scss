@@ -7,7 +7,10 @@
 }
 
 .list-nav {
-    a:hover, a[aria-current="page"] {
-        border-bottom:1px solid #000;
+    a, button {
+        border-bottom: 1px solid transparent !important;
+    }
+    a:hover, a[aria-current="page"], button:hover {
+        border-bottom:1px solid #000 !important;
     }
 }

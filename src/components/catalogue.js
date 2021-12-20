@@ -53,7 +53,7 @@ const Catalogue = ({ products }) => {
     <div className="">
       {/* Arrows */}
       <div className="grid grid-cols-12 h-full">
-      <div className="col-span-1 -ml-8 md:ml-0">
+      <div className="hidden md:block col-span-1 -ml-8 md:ml-0">
         <button onClick={slickPrev} className="sticky top-1/2 col-span-1">
           <svg
             width="48"
@@ -78,7 +78,7 @@ const Catalogue = ({ products }) => {
         </button>
       </div>
 
-      <div className="col-span-1 order-last text-right items-end">
+      <div className="hidden md:block col-span-1 order-last text-right items-end">
         <button onClick={slickNext} className="ml-3 md:ml-0  sticky top-1/2 col-span-1">
           <svg
             width="48"
@@ -103,7 +103,7 @@ const Catalogue = ({ products }) => {
         </button>
       </div>
       {/* Main Slick */}
-      <Slider ref={ref} className="col-span-10" {...settings}>
+      <Slider ref={ref} className="col-span-12 md:col-span-10" {...settings}>
         {products.map(product => (
           <div
             className="relative h-screen w-full"
