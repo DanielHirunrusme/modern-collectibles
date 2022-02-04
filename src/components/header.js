@@ -48,12 +48,15 @@ const Header = () => {
                 <Link to="/about">About</Link>
                 <div className="mx-0">|</div>
                 <OutboundLink 
-                className="hidden md:flex items-center justify-center"
+                className="hidden group md:flex items-center justify-center relative"
                 href="weixin://dl/chat?Jing_Daily_China"
                 title="Read WeChat Articles"
                 target="_blank"
               >
-                微信
+                <span>微信</span>
+                <div className="absolute hidden group-hover:block pt-24">
+      <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
+    </div>
               </OutboundLink>
               </nav>
 
@@ -181,11 +184,16 @@ const Header = () => {
               </OutboundLink>
             </nav>
           </div>
-          <div className="mx-8 mb-5 flex uppercase items-center">
+          <div className="mx-8 mb-5 flex flex-col w-full uppercase">
+          <div className="pb-4 w-16">
+      <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
+    </div>
+    <div className="flex items-center">
             <span className=" mr-2 md:mr-3">
               <JingDaily />
             </span>
             <span>Modern</span>&ensp;<span>Collectibles &trade;</span>
+            </div>
           </div>
         </header>
       )}

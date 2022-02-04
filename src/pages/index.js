@@ -243,9 +243,9 @@ const IndexPage = () => {
           </div>
         </Section>
         <Section title="Through Experts Eyes">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 max-w-6xl mx-auto">
-            <div className="">
-              <h4>WHO ARE THE EXPERTS?</h4>
+          <div className="grid grid-flow-row  gap-12 lg:gap-24 max-w-6xl mx-auto">
+            <div className="md:text-3xl">
+              {/* <h4>WHO ARE THE EXPERTS?</h4> */}
               <p>
                 Modern collectibles have the ability to be both completely
                 personal while also reaching a wide audience. In Through Expert
@@ -253,15 +253,15 @@ const IndexPage = () => {
                 fashion to share their pick for their favorite modern
                 collectible.
               </p>
-              <br />
+              {/* <br />
               <p>
                 For more information about future modern collectibles, join our
                 mailing list.
               </p>
               <br />
-              <a href="#Newsletter">SUBSCRIBE TO NEWSLETTER</a>
+              <a href="#Newsletter">SUBSCRIBE TO NEWSLETTER</a> */}
             </div>
-            <div className="grid grid-cols-2 gap-8 uppercase text-center md:-mt-3">
+            <div className="grid md:grid-cols-3 gap-8 uppercase text-center md:-mt-3">
               {experts &&
                 experts.map(expert => (
                   <React.Fragment key={expert.Name}>

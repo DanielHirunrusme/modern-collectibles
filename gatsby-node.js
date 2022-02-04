@@ -42,10 +42,10 @@ exports.sourceNodes = async ({ actions }) => {
     try {
         return JSON.parse(body);
     } catch (err) {
-        console.error("Error:", err);
-        console.error("Response body:", body);
-        // throw err;
-        return ReE(response, err.message, 500)
+        // console.error("Error:", err);
+        // console.error("Response body:", body);
+        throw err;
+        // return ReE(response, err.message, 500)
     }
 }
 

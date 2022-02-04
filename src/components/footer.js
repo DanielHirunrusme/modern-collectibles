@@ -10,24 +10,30 @@ import {
   faTwitter,
   faLinkedin,
   faInstagram,
-  faWeibo
+  faWeibo,
 } from "@fortawesome/free-brands-svg-icons"
 import { JingDaily } from "../svgs"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Footer = () => (
   <footer className="max-w-6xl mx-auto flex flex-col pt-24 md:pt-48 mb-8 md:mb-0 py-6">
+    <div className="hidden md:block w-12 mb-4 hover:w-48">
+      <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
+    </div>
     <nav className=" w-full flex flex-col-reverse md:flex-row flex-1 mx-auto justify-center md:justify-between items-center">
-    <span className="block text-center w-full md:hidden">
+      <span className="block text-center w-full md:hidden">
         {/* <JingDaily /> */}
         &copy; 2021
       </span>
       <ul className="hidden list-nav md:flex flex-col md:flex-row items-center">
-        <li><span className="mr-3  flex">
-        {/* <JingDaily /> */}
-        &copy; 2021
-      </span></li>
-      <li className="mr-3 hidden lg:block">|</li>
+        <li>
+          <span className="mr-3  flex">
+            {/* <JingDaily /> */}
+            &copy; 2021
+          </span>
+        </li>
+        <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3 hidden lg:block">
           <OutboundLink
             href="https://jingculturecommerce.com/"
@@ -40,13 +46,19 @@ const Footer = () => (
         </li>
         <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3 hidden lg:block">
-          <OutboundLink href="https://jingdaily.com" title="Jing Daily" target="_blank">
+          <OutboundLink
+            href="https://jingdaily.com"
+            title="Jing Daily"
+            target="_blank"
+          >
             Jing Daily
           </OutboundLink>
         </li>
         <li className="mr-3 hidden lg:block">|</li>
         <li className="mr-3">
-          <OutboundLink href="https://jingdaily.com/advertise/" target="_blank">Advertise</OutboundLink>
+          <OutboundLink href="https://jingdaily.com/advertise/" target="_blank">
+            Advertise
+          </OutboundLink>
         </li>
         <li className="mr-3 hidden md:block">|</li>
         <li className="mr-3">
@@ -60,10 +72,16 @@ const Footer = () => (
         >
           <FontAwesomeIcon icon={faFacebookF} />
         </OutboundLink>
-        <OutboundLink href="weixin://dl/chat?Jing_Daily_China" title="Jing Daily WeChat">
+        <OutboundLink
+          href="weixin://dl/chat?Jing_Daily_China"
+          title="Jing Daily WeChat"
+        >
           <FontAwesomeIcon icon={faWeixin} />
         </OutboundLink>
-        <OutboundLink href="https://twitter.com/JingDaily" title="Jing Daily Twitter">
+        <OutboundLink
+          href="https://twitter.com/JingDaily"
+          title="Jing Daily Twitter"
+        >
           <FontAwesomeIcon icon={faTwitter} />
         </OutboundLink>
         <OutboundLink
@@ -80,7 +98,7 @@ const Footer = () => (
         </OutboundLink>
         <OutboundLink
           href="https://weibo.com/jingdaily"
-          title="Jing Daily Weibo" 
+          title="Jing Daily Weibo"
         >
           <FontAwesomeIcon icon={faWeibo} />
         </OutboundLink>
@@ -99,7 +117,15 @@ const Footer = () => (
                 <li><a href="#" title="Instagram">Instagram</a></li>
             </ul> */}
     </nav>
-    <small className="uppercase mt-2 text-center md:text-left">Jing Daily Modern Collectibles is a Trademark of Jing Daily.<br />Jing Daily offers resale of collectibles through consignment but is not otherwise affiliated with any featured brands</small>
+    <small className="uppercase mt-2 text-center md:text-left">
+      Jing Daily Modern Collectibles is a Trademark of Jing Daily.
+      <br />
+      Jing Daily offers resale of collectibles through consignment but is not
+      otherwise affiliated with any featured brands
+    </small>
+    <div className="md:hidden w-24 mx-auto mt-8">
+      <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
+    </div>
     {/* <nav className="text-xs grid grid-cols-5 gap-2 items-end mb-px">
             <a href="https://www.facebook.com/jingdaily/" title="Jing Daily Facebook"><FontAwesomeIcon icon={faFacebookF} /></a>
             <a href="weixin://dl/chat?Jing_Daily_China" title="Jing Daily WeChat"><FontAwesomeIcon icon={faWeixin} /></a>
