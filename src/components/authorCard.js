@@ -69,8 +69,8 @@ const AuthorCard = ({ size, author }) => {
         </div>
       )}
       {Collectible && (
-        <div className=" text-sm text-center w-full h-full flex items-end">
-          {/* <div className="m-4 text-center w-full">❤<br/>{pick}</div> */}
+        <div className="text-center w-full h-full flex items-end">
+          <div className="m-4 text-sm text-center w-full">✎{Collectible}</div>
         </div>
       )}
     </div>

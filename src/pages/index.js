@@ -261,7 +261,7 @@ const IndexPage = () => {
               <br />
               <a href="#Newsletter">SUBSCRIBE TO NEWSLETTER</a> */}
             </div>
-            <div className="grid md:grid-cols-3 gap-8 uppercase text-center md:-mt-3">
+            <div className="grid grid-flow-row expert-grid md:grid-cols-2 lg:grid-cols-3 gap-8 uppercase text-center md:-mt-3">
               {experts &&
                 experts.map(expert => (
                   <React.Fragment key={expert.Name}>

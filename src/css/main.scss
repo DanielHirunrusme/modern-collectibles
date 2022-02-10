@@ -2,3 +2,21 @@ main {
     // @apply min-h-screen;
     min-height: calc(100vh - 17.5rem);
 }
+
+@screen md {
+.expert-grid {
+    & > button:nth-child(3n - 1) {
+        grid-row-end: 1;
+      }
+      
+    //   & > button:nth-last-child(2):nth-child(3n + 1) {
+    //     grid-column-end: 4;
+    //   }
+      
+      /* Dealing with single orphan */
+      
+      & > button:last-child:nth-child(3n - 2) {
+        grid-column-end: 3;
+      }
+}
+}
