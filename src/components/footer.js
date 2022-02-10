@@ -123,7 +123,7 @@ const Footer = () => (
       Jing Daily offers resale of collectibles through consignment but is not
       otherwise affiliated with any featured brands
     </small>
-    <div className="md:hidden w-24 mx-auto mt-8">
+    <div className="md:hidden w-48 md:w-24 mx-auto mt-8">
       <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
     </div>
     {/* <nav className="text-xs grid grid-cols-5 gap-2 items-end mb-px">

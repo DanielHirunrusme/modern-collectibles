@@ -62,9 +62,9 @@ const AuthorCard = ({ size, author }) => {
   // }
   return (
     <div className="aspect-w-4 aspect-h-5 border flex flex-col justify-between border-black hover:bg-black hover:text-white">
-      {Name && <h4 className="pt-3 px-6">{Name}</h4>}
+      {Name && <h4 className="pt-4 px-6">{Name}</h4>}
       {Portrait && Portrait[0] && (
-        <div className="p-8 md:p-16 max-w-xs m-auto flex items-center justify-center">
+        <div className="p-16 md:p-16 max-w-xs m-auto flex items-center justify-center">
                       <img src={Portrait[0].thumbnails.large.url} />
         </div>
       )}

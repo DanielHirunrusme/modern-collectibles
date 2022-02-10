@@ -219,7 +219,7 @@ const IndexPage = () => {
           </div>
           <Logo />
         </div>
-        <Section title="Introduction">
+        <Section>
           <div className="max-w-4xl mx-auto">
             {featured.map(post => (
               <React.Fragment key={`featured-${post.id}`}>

@@ -6,7 +6,7 @@ const ReadPage = () => {
   const posts = useStaticQuery(graphql`
     query ReadPageQuery {
       featured: allApiPost(
-        filter: { id: { in: ["127307", "127308", "127309", "127310"] } }
+        filter: { id: { in: ["127307", "127308", "127309", "127310", "129210"] } }
       ) {
         edges {
           node {
@@ -39,7 +39,7 @@ const ReadPage = () => {
   `)
 
   const isFeatured = post => {
-    const featured = ["127307", "127308", "127309", "127310"]
+    const featured = ["127307", "127308", "127309", "127310", "129210"]
     let is = false
     featured.map(id => {
       console.log(post)

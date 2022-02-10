@@ -185,7 +185,7 @@ const Header = () => {
             </nav>
           </div>
           <div className="mx-8 mb-5 flex flex-col w-full uppercase">
-          <div className="pb-4 w-16">
+          <div className="pb-4 w-48 -mx-4">
       <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
     </div>
     <div className="flex items-center">

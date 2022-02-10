@@ -111,7 +111,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const allPosts = await (
     await fetch(
-      "https://jingdaily.com/wp-json/wp/v2/posts?include[]=127310&include[]=127309&include[]=127308&include[]=127307&_embed"
+      "https://jingdaily.com/wp-json/wp/v2/posts?include[]=129210&include[]=127310&include[]=127309&include[]=127308&include[]=127307&_embed"
     )
   ).json()
   for (const post of allPosts) {
@@ -121,7 +121,8 @@ exports.createPages = async ({ graphql, actions }) => {
       String(post.id) === "127307" ||
       String(post.id) === "127308" ||
       String(post.id) === "127309" ||
-      String(post.id) === "127310"
+      String(post.id) === "127310" ||
+      String(post.id) === "129210"
     ) {
       if (post && post.slug) {
         console.log('make post', post.slug)
