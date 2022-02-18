@@ -93,7 +93,7 @@ const getSVG = () => {
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query FeaturedPosts {
-      featured: allApiPost(filter: { id: { in: ["127307"] } }) {
+      featured: allApiPost(filter: { id: { in: ["127307", "129210"] } }, sort: {order: DESC, fields: date}) {
         edges {
           node {
             title
@@ -213,21 +213,21 @@ const IndexPage = () => {
           description="Jing Daily Modern Collectibles is a new mindset that contextualizes and defines highly sought-after products, ranging from sneakers and handbags to toys and jewelry. This new world merges editorial with commerce to take a deeper look at the products that define modern luxury, serving as a handbook for both consumers and brands."
         />
 
-        <div className="h-60 -mx-8 md:mx-0 z-40 pointer-events-none relative flex flex-col items-center justify-center mt-12 md:mt-48 jing-hero">
+        {/* <div className="h-60 -mx-8 md:mx-0 z-40 pointer-events-none relative flex flex-col items-center justify-center mt-12 md:mt-48 jing-hero">
           <div className="jing-hero-logo">
             <JingDaily />
           </div>
           <Logo />
-        </div>
-        <Section>
-          <div className="max-w-4xl mx-auto">
+        </div> */}
+        <div className="pt-20">
+          <div className="max-w-6xl grid grid-flow-row gap-16 mx-auto">
             {featured.map(post => (
               <React.Fragment key={`featured-${post.id}`}>
-                <PostCard size="large" post={post} />
+                <PostCard size="featured" post={post} />
               </React.Fragment>
             ))}
           </div>
-        </Section>
+        </div>
         <Section title="Reading">
           <div className="grid grid-flow-row gap-8 max-w-6xl mx-auto">
             {all.map(post => (
@@ -309,6 +309,7 @@ const IndexPage = () => {
             </OutboundLink>
           </div>
         </Section>
+        
       </Layout>
     </ModalProvider>
   )

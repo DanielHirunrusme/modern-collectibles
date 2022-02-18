@@ -6,7 +6,7 @@ const ReadPage = () => {
   const posts = useStaticQuery(graphql`
     query ReadPageQuery {
       featured: allApiPost(
-        filter: { id: { in: ["127307", "127308", "127309", "127310", "129210"] } }
+        filter: { id: { in: ["127307", "127308", "127309", "127310", "129210"] } }, sort: {order: DESC, fields: date}
       ) {
         edges {
           node {

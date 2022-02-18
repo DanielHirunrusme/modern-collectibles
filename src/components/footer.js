@@ -12,12 +12,17 @@ import {
   faInstagram,
   faWeibo,
 } from "@fortawesome/free-brands-svg-icons"
+import {Logo} from "../components/index"
 import { JingDaily } from "../svgs"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Footer = () => (
+  <>
+  <div className="pt-16"><Logo />
+  </div>
   <footer className="max-w-6xl mx-auto flex flex-col pt-24 md:pt-48 mb-8 md:mb-0 py-6">
+    
     <div className="hidden md:block w-12 mb-4 hover:w-48">
       <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
     </div>
@@ -135,6 +140,7 @@ const Footer = () => (
         </nav> */}
     {/* <small>(c)2021</small> */}
   </footer>
+  </>
 )
 
 export default Footer
