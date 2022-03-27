@@ -57,18 +57,18 @@ const ReadPage = () => {
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-2">
         {featuredPosts &&
           featuredPosts.map(post => (
-            <PostCard featured={isFeatured(post)} size="small" post={post} />
+            <PostCard featured={isFeatured(post)} size="medium" post={post} />
           ))}
       </div>
       </Section>
-      <Section title="All">
+      {/* <Section title="All">
       <div className="max-w-6xl mx-auto grid grid-flow-row gap-8">
       {allPosts &&
           allPosts.map(post => (
             <PostCard size="slim" post={post} />
           ))}
       </div>
-      </Section>
+      </Section> */}
     </Layout>
   )
 }

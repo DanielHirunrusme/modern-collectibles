@@ -3,7 +3,7 @@ form {
 }
 
 .form-wrapper {
-    @apply relative border border-black;
+    @apply relative border border-black border-dotted;
 
     button {
         @apply absolute right-0 top-0 pr-4 h-full flex items-center;

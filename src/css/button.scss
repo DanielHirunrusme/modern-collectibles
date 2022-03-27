@@ -1,7 +1,7 @@
 .primary-button {
-    @apply text-sm md:text-xl inline-block mx-auto border border-black p-4 text-center hover:bg-black hover:text-white;
+    @apply text-sm md:text-xl inline-block mx-auto border border-black border-dotted p-4 text-center hover:bg-black hover:text-white;
 }
 
 .default-button {
-    @apply hover:bg-black hover:text-white 
+    @apply hover:bg-black hover:text-white;
 }

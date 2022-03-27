@@ -78,6 +78,16 @@ module.exports = {
               Collectible:"",
               Portrait: []
             },
+          },
+          {
+            baseId: "appgyq7KRpuJ54mAP",
+            tableName: "Posts",
+            defaultValues: {
+              ID:"",
+              Bio:"",
+              Featured: false,
+              SVG: []
+            },
           }
         ]
       }

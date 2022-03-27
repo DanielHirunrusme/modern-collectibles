@@ -93,7 +93,25 @@ const getSVG = () => {
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query FeaturedPosts {
-      featured: allApiPost(filter: { id: { in: ["127307", "129210"] } }, sort: {order: DESC, fields: date}) {
+      airPosts: allAirtable(filter: { table: { eq: "Posts" } }) {
+        edges {
+          node {
+            data {
+              ID
+              Featured
+              SVG {
+                url
+              }
+            }
+          }
+        }
+      }
+      featured: allApiPost(
+        filter: {
+          id: { in: ["127307", "129210", "129886", "129847", "129768"] }
+        }
+        sort: { order: DESC, fields: date }
+      ) {
         edges {
           node {
             title
@@ -102,6 +120,7 @@ const IndexPage = () => {
             featured_media
             slug
             author
+            date
           }
         }
       }
@@ -116,6 +135,19 @@ const IndexPage = () => {
             featured_media
             slug
             author
+          }
+        }
+      }
+      allPosts: allApiPost {
+        edges {
+          node {
+            title
+            id
+            excerpt
+            featured_media
+            slug
+            author
+            date
           }
         }
       }
@@ -202,9 +234,12 @@ const IndexPage = () => {
 
   const featured = data.featured?.edges?.map(({ node }) => node)
   const posts = data.posts?.edges?.map(({ node }) => node)
+  const airPosts = data.airPosts?.edges?.map(({ node }) => node)
   const all = data.all?.edges?.map(({ node }) => node)
+  const allPosts = data.allPosts?.edges?.map(({ node }) => node)
 
-  console.log(experts)
+  console.log('allPosts', allPosts)
+  console.log('airPosts', airPosts)
   return (
     <ModalProvider>
       <Layout>
@@ -219,16 +254,27 @@ const IndexPage = () => {
           </div>
           <Logo />
         </div> */}
-        <div className="pt-20">
-          <div className="max-w-6xl grid grid-flow-row gap-16 mx-auto">
-            {featured.map(post => (
-              <React.Fragment key={`featured-${post.id}`}>
-                <PostCard size="featured" post={post} />
-              </React.Fragment>
+        <div className="md:pt-20">
+          <div className="max-w-6xl grid grid-flow-row lg:gap-16 mx-auto">
+            {allPosts.map(post => (
+              <>
+                {airPosts.map(p => (
+                  <>
+                    {p.data.ID === post.id && p.data?.Featured && (
+                      <React.Fragment key={`featured-${post.id}`}>
+                        <PostCard size="featured" post={post} image={p.data?.SVG[0]?.url} />
+                      </React.Fragment>
+                    )}
+                  </>
+                ))}
+              </>
             ))}
+            {/* {featured.map(post => (
+              
+            ))} */}
           </div>
         </div>
-        <Section title="Reading">
+        {/* <Section title="Reading">
           <div className="grid grid-flow-row gap-8 max-w-6xl mx-auto">
             {all.map(post => (
               <React.Fragment key={`further-reading-${post.id}`}>
@@ -241,10 +287,10 @@ const IndexPage = () => {
               View All Articles &rarr;
             </Link>
           </div>
-        </Section>
+        </Section> */}
         <Section title="Through Experts Eyes">
           <div className="grid grid-flow-row  gap-12 lg:gap-24 max-w-6xl mx-auto">
-            <div className="md:text-3xl">
+            <div className="md:text-3xl md:leading-normal">
               {/* <h4>WHO ARE THE EXPERTS?</h4> */}
               <p>
                 Modern collectibles have the ability to be both completely
@@ -265,7 +311,6 @@ const IndexPage = () => {
               {experts &&
                 experts.map(expert => (
                   <React.Fragment key={expert.Name}>
-                    {" "}
                     <Popup headline={expert.Collectible} content={expert.Bio}>
                       <AuthorCard author={expert} />
                     </Popup>
@@ -290,11 +335,25 @@ const IndexPage = () => {
         </Hero>
         <Section title="Louis Vuitton×Supreme Analysis">
           <div className="reading-grid gap-8 items-center">
-            {posts.map(post => (
-              <React.Fragment key={`reading-${post.id}`}>
-                <PostCard post={post} />
-              </React.Fragment>
+          {posts.map(post => (
+              <>
+                {airPosts.map(p => (
+                  <>
+                    {p.data.ID === post.id && (
+                      <React.Fragment key={`reading-${post.id}`}>
+                        <PostCard size="medium" post={post} image={p.data?.SVG[0]?.url} />
+                      </React.Fragment>
+                    )}
+                  </>
+                ))}
+              </>
             ))}
+
+            {/* {posts.map(post => (
+              <React.Fragment key={`reading-${post.id}`}>
+                <PostCard post={post} size="medium" />
+              </React.Fragment>
+            ))} */}
           </div>
         </Section>
         <Section title="Catalogue">
@@ -309,7 +368,6 @@ const IndexPage = () => {
             </OutboundLink>
           </div>
         </Section>
-        
       </Layout>
     </ModalProvider>
   )

@@ -131,7 +131,7 @@ const Catalogue = ({ products }) => {
               className="inline-block pr-4 md:pr-8"
               onClick={()=> goToSlide(index)}
             >
-              <div className="w-36 h-52 flex justify-between flex-col  max-w-xs overflow-hidden border border-black bg-white ">
+              <div className="w-36 h-52 flex justify-between flex-col  max-w-xs overflow-hidden border border-black border-dotted bg-white ">
                 <div className="m-1 product-card-image">
                 
                     {product.Images && product.Images[0] && (
@@ -139,9 +139,9 @@ const Catalogue = ({ products }) => {
                     )}
                
                 </div>
-                <div className="flex border-t border-black w-full flex-1">
+                <div className="flex border-t border-black border-dotted hover:border-solid w-full flex-1">
                   
-                    <div className="h-full w-1/2 text-center flex items-center justify-center hover:bg-black hover:text-white border-r border-black">
+                    <div className="h-full w-1/2 text-center flex items-center justify-center hover:bg-black hover:text-white border-r border-black border-dotted">
                     <Popup product={product}>View</Popup>
                     </div>
                   

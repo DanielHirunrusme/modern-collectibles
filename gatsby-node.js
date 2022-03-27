@@ -55,7 +55,7 @@ exports.sourceNodes = async ({ actions }) => {
     ).then(safeParseJSON)
   )
 
-  console.log(allPosts);
+  console.log('=== all posts ===')
 
   for (const post of allPosts) {
     // create node for graphql
@@ -111,19 +111,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const allPosts = await (
     await fetch(
-      "https://jingdaily.com/wp-json/wp/v2/posts?include[]=129210&include[]=127310&include[]=127309&include[]=127308&include[]=127307&_embed"
+      "https://jingdaily.com/wp-json/wp/v2/posts?include[]=129210&include[]=127310&include[]=127309&include[]=127308&include[]=127307&include[]=129886&include[]=129847&include[]=129768&_embed"
     )
   ).json()
+
+  console.log('=== all posts within createPages ===')
+  
   for (const post of allPosts) {
     // const blocks = await (await fetch(‘http://some-api.com/post/’ + post.id)).json();
     console.log(post.id);
-    if (
-      String(post.id) === "127307" ||
-      String(post.id) === "127308" ||
-      String(post.id) === "127309" ||
-      String(post.id) === "127310" ||
-      String(post.id) === "129210"
-    ) {
+
       if (post && post.slug) {
         console.log('make post', post.slug)
         createPage({
@@ -135,6 +132,6 @@ exports.createPages = async ({ graphql, actions }) => {
           },
         })
       }
-    }
+    
   }
 }

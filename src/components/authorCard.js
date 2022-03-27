@@ -6,73 +6,24 @@ import { StaticImage } from "gatsby-plugin-image"
 const AuthorCard = ({ size, author }) => {
   const { Name, Bio, Portrait, Collectible } = author
 
-  console.log(author)
-
-  // const getImage = num => {
-  //   switch (num) {
-  //     case 1:
-  //       return (
-  //         <StaticImage
-  //           placeholder="tracedSVG"
-  //           width={200}
-  //           height={200}
-  //           transformOptions={{ grayscale: "true" }}
-  //           src="../images/LVS_Experts_Sarah.png"
-  //           alt={name}
-  //         />
-  //       )
-  //       break
-  //     case 2:
-  //       return (
-  //         <StaticImage
-  //           transformOptions={{ grayscale: "true" }}
-  //           width={200}
-  //           height={200}
-  //           placeholder="tracedSVG"
-  //           src="../images/LVS_Experts_Michael.jpg"
-  //           alt={name}
-  //         />
-  //       )
-  //       break
-  //     case 3:
-  //       return (
-  //         <StaticImage
-  //           transformOptions={{ grayscale: "true" }}
-  //           width={200}
-  //           height={200}
-  //           placeholder="tracedSVG"
-  //           src="../images/LVS_Experts_Hannan.jpg"
-  //           alt={name}
-  //         />
-  //       )
-  //       break
-  //     case 4:
-  //       return (
-  //         <StaticImage
-  //           transformOptions={{ grayscale: "true" }}
-  //           width={200}
-  //           height={200}
-  //           placeholder="tracedSVG"
-  //           src="../images/LVS_Experts_Iolo.jpg"
-  //           alt={name}
-  //         />
-  //       )
-  //       break
-  //   }
-  // }
   return (
-    <div className="aspect-w-4 aspect-h-5 border flex flex-col justify-between border-black hover:bg-black hover:text-white">
-      {Name && <h4 className="pt-4 px-6">{Name}</h4>}
+    <div className="aspect-w-4 aspect-h-3  md:aspect-h-5 relative border flex flex-col items-end text-left justify-end border-black border-dotted hover:border-solid hover:bg-black hover:text-white">
+      <div>
       {Portrait && Portrait[0] && (
-        <div className="p-16 md:p-16 max-w-xs m-auto flex items-center justify-center">
-                      <img src={Portrait[0].thumbnails.large.url} />
+        <div className="m-6 pb-0 h-24 w-24 sm:h-1/2 sm:w-1/2 md:mb-0 max-w-md transform ml-auto flex items-end justify-end">
+                      <img src={Portrait[0].thumbnails.large.url} className=" w-full h-full absolute object-contain object-right-top" />
         </div>
       )}
+      <div className="absolute transform flex flex-col bottom-0 h-auto left-0 w-full">
+      {Name && <div className="pt-4 px-4">EXPERT<br /><h4 className="text-left">{Name}</h4></div>}
       {Collectible && (
-        <div className="text-center w-full h-full flex items-end">
-          <div className="m-4 text-sm text-center w-full">✎{Collectible}</div>
+        <div className="text-left m-4 border-black pt-4 border-t border-dotted">
+          COLLECTIBLE<br />
+          <div className="w-full">{Collectible}</div>
         </div>
       )}
+      </div>
+      </div>
     </div>
   )
 }

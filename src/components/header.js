@@ -1,9 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { JingDaily } from "../svgs"
 import { Newsletter } from "./"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faFacebook,
@@ -16,16 +16,37 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [atTop, setAtTop] = useState(0)
+  const [currScroll, setCurrScroll] = useState(0);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
   }
+
+  const onScroll = () => {
+    // console.log('window.scrollY', window.scrollY)
+    // console.log('currScroll', window.currScroll)
+    if (window.scrollY >= 10 && window.scrollY > window.currScroll) {
+      setAtTop(false)
+    } else {
+      setAtTop(true);
+    }
+    window.currScroll = window.scrollY;
+  }
+
+  useEffect(() => {
+    if (typeof window) {
+      window.addEventListener("scroll", onScroll)
+    }
+
+    return ()=> window.removeEventListener("scroll", onScroll)
+  }, [])
+
   return (
     <>
       {!menuOpen ? (
-        <header className="fixed bg-white left-0 top-0 w-full z-20">
+        <header data-visible={atTop} className="fixed transform transition-transform duration-150 ease-linear bg-white left-0 top-0 w-full z-20">
           <div className="max-w-6xl mx-8 xl:mx-auto mt-5 mb-5">
             <div className="flex justify-between">
               <h1 className="flex">
@@ -36,7 +57,8 @@ const Header = () => {
                   <span className=" mr-2 md:mr-3">
                     <JingDaily />
                   </span>
-                  <span>Modern</span>&ensp;<span>Collectibles&thinsp;&trade;</span>
+                  <span>Modern</span>&ensp;
+                  <span>Collectibles&thinsp;&trade;</span>
                 </Link>
               </h1>
               {/* <div className="hidden lg:block">
@@ -47,20 +69,19 @@ const Header = () => {
                 <Link to="/read">Read</Link>
                 <Link to="/about">About</Link>
                 <div className="mx-0">|</div>
-                <OutboundLink 
-                className="hidden group md:flex items-center justify-center relative"
-                href="weixin://dl/chat?Jing_Daily_China"
-                title="Read WeChat Articles"
-                target="_blank"
-              >
-                <span>微信</span>
-                <div className="absolute hidden group-hover:block pt-24">
-      <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
-    </div>
-              </OutboundLink>
+                <OutboundLink
+                  className="hidden group md:flex items-center justify-center relative"
+                  href="weixin://dl/chat?Jing_Daily_China"
+                  title="Read WeChat Articles"
+                  target="_blank"
+                >
+                  <span>微信</span>
+                  <div className="absolute hidden group-hover:block pt-24">
+                    <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
+                  </div>
+                </OutboundLink>
               </nav>
 
-             
               <button className="block md:hidden" onClick={toggleMenu}>
                 <svg
                   width="24"
@@ -152,31 +173,31 @@ const Header = () => {
               <Newsletter />
             </div>
             <nav className="grid grid-cols-8 gap-3 items-center text-base">
-              <OutboundLink 
+              <OutboundLink
                 href="https://www.facebook.com/jingdaily/"
                 title="Jing Daily Facebook"
               >
                 <FontAwesomeIcon icon={faFacebookF} />
               </OutboundLink>
-              <OutboundLink 
+              <OutboundLink
                 href="weixin://dl/chat?Jing_Daily_China"
                 title="Jing Daily WeChat"
               >
                 <FontAwesomeIcon icon={faWeixin} />
               </OutboundLink>
-              <OutboundLink 
+              <OutboundLink
                 href="https://twitter.com/JingDaily"
                 title="Jing Daily Twitter"
               >
                 <FontAwesomeIcon icon={faTwitter} />
               </OutboundLink>
-              <OutboundLink 
+              <OutboundLink
                 href="https://www.linkedin.com/company/jing-daily"
                 title="Jing Daily LinkedIm"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </OutboundLink>
-              <OutboundLink 
+              <OutboundLink
                 href="https://www.instagram.com/jingdaily/"
                 title="Jing Daily Instagram"
               >
@@ -185,14 +206,14 @@ const Header = () => {
             </nav>
           </div>
           <div className="mx-8 mb-5 flex flex-col w-full uppercase">
-          <div className="pb-4 w-48 -mx-4">
-      <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
-    </div>
-    <div className="flex items-center">
-            <span className=" mr-2 md:mr-3">
-              <JingDaily />
-            </span>
-            <span>Modern</span>&ensp;<span>Collectibles &trade;</span>
+            <div className="pb-4 w-48 -mx-4">
+              <img src="/jingdaily-qr-code.jpg" alt="Jing Daily WeChat" />
+            </div>
+            <div className="flex items-center">
+              <span className=" mr-2 md:mr-3">
+                <JingDaily />
+              </span>
+              <span>Modern</span>&ensp;<span>Collectibles &trade;</span>
             </div>
           </div>
         </header>

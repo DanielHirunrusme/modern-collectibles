@@ -14,3 +14,7 @@
         border-bottom:1px solid #000 !important;
     }
 }
+
+header[data-visible="false"]{
+    @apply -translate-y-full;
+}
