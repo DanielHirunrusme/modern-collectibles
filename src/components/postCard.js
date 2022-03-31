@@ -90,7 +90,7 @@ const PostCard = ({ size, post, featured, image = null }) => {
           <article className={`group mb-4 ${size !== "large" ? "" : ""}  `}>
             {slug && (
               <Link to={`/read/${slug}`}>
-                <div className="flex relative" style={{ minHeight: "75vh"}}>
+                <div className="flex relative" style={{ minHeight: "65vh"}}>
                   <div  className="flex w-full flex-1 flex-col relative z-10 lg:justify-between">
                     <div className="overflow-hidden flex flex-col lg:flex-row relative">
                       {title && (
@@ -119,16 +119,16 @@ const PostCard = ({ size, post, featured, image = null }) => {
                         )}
                       </div>
 
-                      <div className="max-w-3xl grid grid-cols-12 mt-6 items-end">
+                      <div className="md:w-1/2 grid grid-cols-12 mt-6 items-end">
                         {author && (
-                          <div className="col-span-6 md:col-span-4">
+                          <div className="col-span-6 md:col-span-6">
                             AUTHOR
                             <br />
                             {author}
                           </div>
                         )}
                         {date && (
-                          <div className="col-span-6 md:col-span-4">
+                          <div className="col-span-6 md:col-span-6">
                             PUBLISHED
                             <br />
                             <div>{date}</div>

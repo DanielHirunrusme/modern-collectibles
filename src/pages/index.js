@@ -138,7 +138,7 @@ const IndexPage = () => {
           }
         }
       }
-      allPosts: allApiPost {
+      allPosts: allApiPost(sort: { order: DESC, fields: date }) {
         edges {
           node {
             title

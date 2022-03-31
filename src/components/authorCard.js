@@ -7,7 +7,7 @@ const AuthorCard = ({ size, author }) => {
   const { Name, Bio, Portrait, Collectible } = author
 
   return (
-    <div className="aspect-w-4 aspect-h-3  md:aspect-h-5 relative border flex flex-col items-end text-left justify-end border-black border-dotted hover:border-solid hover:bg-black hover:text-white">
+    <div className="aspect-w-4 aspect-h-5 relative border flex flex-col items-end text-left justify-end border-black border-dotted hover:border-solid hover:bg-black hover:text-white">
       <div>
       {Portrait && Portrait[0] && (
         <div className="m-6 pb-0 h-24 w-24 sm:h-1/2 sm:w-1/2 md:mb-0 max-w-md transform ml-auto flex items-end justify-end">
