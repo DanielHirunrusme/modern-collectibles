@@ -43,6 +43,9 @@
 
     //ordered list
 
+    div[id^=attachment] {
+        width: auto !important;
+    }
 
     // wordpress classes
     .wp-caption {

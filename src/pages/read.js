@@ -5,8 +5,25 @@ import { Layout, PostCard, Seo, Section } from "../components/index"
 const ReadPage = () => {
   const posts = useStaticQuery(graphql`
     query ReadPageQuery {
+      airPosts: allAirtable(filter: { table: { eq: "Posts" } }) {
+        edges {
+          node {
+            data {
+              ID
+              Featured
+              Hidden
+              SVG {
+                url
+              }
+            }
+          }
+        }
+      }
       featured: allApiPost(
-        filter: { id: { in: ["127307", "127308", "127309", "127310", "129210"] } }, sort: {order: DESC, fields: date}
+        filter: {
+          id: { in: ["127307", "127308", "127309", "127310", "129210"] }
+        }
+        sort: { order: DESC, fields: date }
       ) {
         edges {
           node {
@@ -20,18 +37,16 @@ const ReadPage = () => {
           }
         }
       }
-      all: allApiPost(
-        filter: { id: { nin: ["127307", "127308", "127309", "127310"] } }
-      ) {
+      allPosts: allApiPost(sort: { order: DESC, fields: date }) {
         edges {
           node {
             title
-            featured_media
-            excerpt
-            date
-            author
-            slug
             id
+            excerpt
+            featured_media
+            slug
+            author
+            date
           }
         }
       }
@@ -49,26 +64,43 @@ const ReadPage = () => {
   }
 
   const featuredPosts = posts.featured?.edges?.map(({ node }) => node)
-  const allPosts = posts.all?.edges?.map(({ node }) => node)
+  const allPosts = posts.allPosts?.edges?.map(({ node }) => node)
+  const airPosts = posts.airPosts?.edges?.map(({ node }) => node)
+
+  console.log(allPosts)
   return (
     <Layout>
       <Seo title="Read" />
-      <Section title="Featured">
-      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-2">
+      {/*<Section title="Featured">
+       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-2">
         {featuredPosts &&
           featuredPosts.map(post => (
             <PostCard featured={isFeatured(post)} size="medium" post={post} />
           ))}
       </div>
-      </Section>
-      {/* <Section title="All">
-      <div className="max-w-6xl mx-auto grid grid-flow-row gap-8">
-      {allPosts &&
-          allPosts.map(post => (
-            <PostCard size="slim" post={post} />
-          ))}
-      </div>
       </Section> */}
+      <Section title="Read">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-2">
+          {allPosts?.map(post => (
+            <>
+              {airPosts.map(p => (
+                <>
+                  {p.data.ID === post.id &&
+                    !p.data?.Hidden && (
+                      <React.Fragment key={`read-${post.id}`}>
+                        <PostCard
+                          size="medium"
+                          post={post}
+                          image={p.data?.SVG[0]?.url}
+                        />
+                      </React.Fragment>
+                    )}
+                </>
+              ))}
+            </>
+          ))}
+        </div>
+      </Section>
     </Layout>
   )
 }
