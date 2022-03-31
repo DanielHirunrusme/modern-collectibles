@@ -99,6 +99,7 @@ const IndexPage = () => {
             data {
               ID
               Featured
+              Hidden
               SVG {
                 url
               }
@@ -260,7 +261,7 @@ const IndexPage = () => {
               <>
                 {airPosts.map(p => (
                   <>
-                    {p.data.ID === post.id && p.data?.Featured && (
+                    {p.data.ID === post.id && p.data?.Featured && !p.data?.Hidden && (
                       <React.Fragment key={`featured-${post.id}`}>
                         <PostCard size="featured" post={post} image={p.data?.SVG[0]?.url} />
                       </React.Fragment>
