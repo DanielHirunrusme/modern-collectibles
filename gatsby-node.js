@@ -56,7 +56,7 @@ exports.sourceNodes = async ({ actions }) => {
 // https://jingdaily.com/wp-json/wp/v2/posts?tags=17457&_embed
   const allPosts = await (
     await fetch(
-      "https://jingdaily.com/wp-json/wp/v2/posts?categories=17558&_embed",
+      "https://jingdaily.com/wp-json/wp/v2/posts?categories=17558&_embed&per_page=100",
     ).then(safeParseJSON)
   )
 
@@ -116,7 +116,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const allPosts = await (
     await fetch(
-      "https://jingdaily.com/wp-json/wp/v2/posts?categories=17558&_embed"
+      "https://jingdaily.com/wp-json/wp/v2/posts?categories=17558&_embed&per_page=100"
     )
   ).json()
 
