@@ -86,6 +86,7 @@ module.exports = {
               ID:"",
               Bio:"",
               Featured: false,
+              Hidden: false,
               SVG: []
             },
           }
