@@ -15,7 +15,14 @@ const Catalogue = ({ products }) => {
   const [slider2, setSlider2] = useState(null);
   const ref = useRef();
 
-  console.log({ products })
+  
+  const collection = products.filter((item)=>{
+    return item.Feature;
+  })
+
+  console.log({collection})
+
+
   const settings = {
     dots: false,
     infinite: true,
@@ -104,7 +111,7 @@ const Catalogue = ({ products }) => {
       </div>
       {/* Main Slick */}
       <Slider ref={ref} className="col-span-12 md:col-span-10" {...settings}>
-        {products.map(product => (
+        {collection.map(product => (
           <div
             className="relative h-screen w-full"
             key={`schematic-${product.ID}`}
@@ -125,7 +132,7 @@ const Catalogue = ({ products }) => {
       {/* Thumbnails */}
       <div className="flex -mx-8 overflow-x-scroll pb-10 hide-scroll-bar sticky bottom-0">
         <div className="flex flex-nowrap ml-8 ">
-          {products.map((product, index) => (
+          {collection.map((product, index) => (
             <div
               key={`product-card-${product.ID}`}
               className="inline-block pr-4 md:pr-8"
@@ -135,7 +142,7 @@ const Catalogue = ({ products }) => {
                 <div className="m-1 product-card-image">
                 
                     {product.Images && product.Images[0] && (
-                      <img src={product.Images[0].thumbnails.large.url} />
+                      <img src={product.Images[0]?.thumbnails?.large?.url} />
                     )}
                
                 </div>
@@ -155,25 +162,7 @@ const Catalogue = ({ products }) => {
           ))}
         </div>
       </div>
-      {/* <div className="flex overflow-x-scroll pb-10 hide-scroll-bar -mx-8">
-        <div className="flex flex-nowrap ml-8 ">
-        {products.map(product => (
-          <div key={`product-card-${product.ID}`} className="inline-block pr-4 md:pr-8">
-             
-            <div className="w-48 h-64 md:w-48 md:h-64 flex justify-between flex-col  max-w-xs overflow-hidden border border-black bg-white ">
-            <div className="m-1">
-            {product.Images && product.Images[0] && <img src={product.Images[0].thumbnails.large.url} />}
-            </div>
-            <div className="flex border-t border-black">
-              <a className="flex-1 w-1/2 text-center border-r border-black p-4 block">View</a>
-              <a className="flex-1 w-1/2 text-center p-4 block">Buy Now</a>
-            </div>
-              </div>
-
-          </div>
-        ))}
-        </div>
-      </div> */}
+      
     </div>
   )
 }

@@ -194,7 +194,7 @@ const IndexPage = () => {
         }
       }
       products: allAirtable(
-        filter: { table: { eq: "Shop" }, data: { Feature: { eq: true } } }
+        filter: { table: { eq: "Shop" } }
       ) {
         edges {
           node {

@@ -68,7 +68,7 @@ const Popup = ({ children, headline, content, product }) => {
           <div className="m-8">
             <p className="mr-4">{product.Title}, ${product.Price}</p>
             <div className="my-8 aspect-w-4 aspect-h-4">
-              <img src={product.Images[0].thumbnails.full.url} alt={product.Title} />
+              {product.Images && <img src={product.Images[0].thumbnails.full.url} alt={product.Title} />}
             </div>
             {product.Status === "Available" ? <OutboundLink href={product.URL} className="primary-button w-full">Buy</OutboundLink> : <span className="primary-button w-full block opacity-25 pointer-events-none">Sold Out</span>}
           </div>
